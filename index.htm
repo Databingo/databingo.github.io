@@ -1,0 +1,161 @@
+<!doctype html>
+<!-- search2end -->
+<html width="100%">
+<!-- chongbuluo -->
+<!-- ai search -->
+<head>
+    <meta http-equiv= "content-type" content = "text/html; charset=UTF-8" />
+	<style type="text/css">
+/*    ul {background-color:yellow;
+    	position:absolute;
+    	top:0;
+        padding:0;
+        width:"6%"}*/
+
+     li {
+     	list-style-type:none;
+     padding:0;}
+
+#cover{
+    /*background-color:yellow;*/
+    height:100px;
+              width:100%;
+              position:fixed;
+              right:0;top:0}
+#search_form {
+    /*background-color:yellow;*/
+              
+              width:100%;
+              position:fixed;
+              right:0;top:45%;
+          }
+
+#search_input{
+    font-size:19px;
+    width:15%;
+    height:30px;
+    margin-left:40%}
+
+
+    #search_button{
+        background-color:gray;
+        color:white;
+        font-size:19px;
+        border:none;
+        display:inline-block;
+        width:10%;
+        height:30px;}
+    
+#iframe_id{
+    width:94%;
+    height:100%;
+    position:fixed;
+    right:0;
+    top:0%;
+    z-index:-1;
+    border:none
+}
+
+	</style>
+
+
+	<script>
+function get_search_text(idn){
+		var search_input = document.getElementById("search_input");
+		var search_text = search_input.value;
+        // alert(idn);
+        if (idn == 'bing'){
+        document.getElementById(idn).href = "http://www.bing.com/search?q=" + search_text;
+        }
+        else if(idn == 'bai'){
+        document.getElementById(idn).href = "https://www.baidu.com/s?wd=" + search_text;
+        }
+        // else if(idn == 'google'){
+        // document.getElementById(idn).href = "https://gg.knight.ren/#newwidows=1&q=" + search_text;
+        // }
+        else if(idn == 'zhihu'){
+        document.getElementById(idn).href = "http://zhihu.sogou.com/zhihu?query=" + search_text;
+        }
+        else if(idn == 'weixin'){
+        document.getElementById(idn).href = "http://weixin.sogou.com/weixin?type=2&query=" + search_text;
+        }
+        else if(idn == 'taobao'){
+        document.getElementById(idn).href = "https://search.taobao.com/search?q=" + search_text;
+        }
+        else if(idn == 'jingdong'){
+        document.getElementById(idn).href = "http://search.jd.com/Search?keyword=" + search_text + "&enc=utf-8"
+        }
+        else if(idn == 'youku'){
+        document.getElementById(idn).href = "http://www.soku.com/search_video/q_" + search_text
+        }
+        else if(idn == 'weibo'){
+        document.getElementById(idn).href = "http://s.weibo.com/weibo/" + search_text + "?topnav=1&wvr=6&b=1"
+        }
+        else if(idn == 'sogou'){
+        document.getElementById(idn).href = "https://www.sogou.com/web?query=" + search_text
+        }       
+        document.form_tag.search_text.focus()
+    }
+
+
+function focus_in(){
+    document.form_tag.search_text.focus();
+  }
+
+
+function click_a(idn){
+	document.getElementById(idn).click();
+	// alert(idn);
+}
+
+function click_button(){
+    var event = window.event||arguments.callee.caller.arguments[0]
+    if (event.keyCode==13){
+     click_a('bing');
+     return false;}
+}
+
+	</script>
+
+
+</head>
+<body  width="100%">
+<form id="cover" name="cover" onclick="focus_in()">
+</form>
+
+
+<form id="search_form" name="form_tag">
+	<input id="search_input" type="textarea" name="search_text" onkeydown="return click_button()"></input>
+	<input id="search_button" type="button" value="搜索到底" onclick="click_a('bing')"></input>
+</form>
+
+
+
+
+<ul style="background-color:yellow;position:fixed;left:0;top:5%;padding:0;border:0;width:6%">
+	<li><a href="http://www.bing.com" target="search_iframe" id="bing" onclick="return get_search_text('bing')">必应</a></li>
+	<li><a href="https://www.baidu.com" target="search_iframe" id="bai" onclick="return get_search_text('bai')">百度</a></li>
+    <li><a href="https://www.sogou.com" target="search_iframe" id="sogou" onclick="return get_search_text('sogou')">搜狗</a></li>
+	<!-- <li><a href="http://www.google.com" target="search_iframe" id="google" onclick="return get_search_text('google')">谷歌</a></li> -->
+    <li><a href="http://zhihu.sogou.com" target="search_iframe" id="zhihu" onclick="return get_search_text('zhihu')">知乎</a></li>
+	<li><a href="http://weixin.sogou.com" target="search_iframe" id="weixin" onclick="return get_search_text('weixin')">微信</a></li>
+	<!-- <li><a href="http://weixin.sogou.com/weixin?type=1&query=test" target="search_iframe" id="weixinhao">weixin</a></li> -->
+	<li><a href="https://search.taobao.com" target="search_iframe" id="taobao" onclick="return get_search_text('taobao')">淘宝</a></li>
+	<li><a href="https://search.jd.com" target="search_iframe" id="jingdong" onclick="return get_search_text('jingdong')">京东</a></li>
+    <li><a href="http://www.youku.com" target="search_iframe" id="youku" onclick="return get_search_text('youku')">优酷</a></li>
+    
+    <!-- <li><a href="http://weibo.com/" target="search_iframe" id="weibo" onclick="return get_search_text('weibo')">微博</a></li> -->
+    
+
+    <!-- <li><a href="http://stackoverflow.com/search?q=test" target="search_iframe" id="stackoverflow">stackoverflow</a></li> -->
+    <!-- <li><a href="https://github.com/search?q=test" target="search_iframe" id="github">github</a></li> -->
+
+</ul>
+
+
+<iframe onload="focus_in()" src="http://www.bing.com/search?q=一次输入，到处搜索" name="search_iframe" id="iframe_id"/>
+
+
+</doby>
+
+</html>
