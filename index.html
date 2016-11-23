@@ -86,6 +86,24 @@
 
 
     <script>
+
+        function now(){
+            var currentdate = new Date();
+            var datetime = currentdate.getFullYear() + "."
+                         + (currentdate.getMonth()+1) + "."
+                         + currentdate.getDate() + " "
+                         + currentdate.getHours() + ":"
+                         + currentdate.getMinutes() + ":"
+                         + currentdate.getMilliseconds();
+            return datetime
+        }
+
+        function init_search_url(){
+            search_url = "http://www.bing.com/search?q=" + now();
+            return search_url
+        }
+
+
         function get_search_text(idn) {
             var search_input = document.getElementById("search_input");
             var search_text = search_input.value;
@@ -124,9 +142,14 @@
                 document.getElementById(idn).href = "http://www.toutiao.com/search/?keyword=" + search_text
             }
             else if (idn == 'zweibo') {
-                document.getElementById(idn).href = "http://t.zhongsou.com/wb?w=" + search_text + "&utf=1"
+                document.getElementById(idn).href = "http://t.zhongsou.com/wb?w=" + search_text + "&utf=1"  // gb2312
 
             }
+            else if (idn == 'zol') {
+                document.getElementById(idn).href = encodeURI("http://search.zol.com.cn/s/all.php?kword=" + search_text) // gbk
+
+            }
+
 
 
             document.form_tag.search_text.focus()
@@ -135,6 +158,7 @@
 
         function focus_in() {
             document.form_tag.search_text.focus();
+
         }
 
 
@@ -163,8 +187,8 @@
 
 
 <form id="search_form" name="form_tag">
-    <input id="search_input" type="textarea" name="search_text" onkeydown="return click_button()"/>
-    <input id="search_button" type="button" value="搜索到底" onclick="click_a('bing')"/>
+    <input id="search_input" type="textarea" name="search_text" value="一次输入，到处搜索" onkeydown="return click_button()"/>
+    <input id="search_button" type="button" value="123好了" onclick="click_a('bing')"/>
 </form>
 
 
@@ -189,7 +213,8 @@
            onclick="return get_search_text('toutiao')">头条</a></li>
     <li><a href="http://t.zhongsou.com/wb?" target="search_iframe" id="zweibo"
            onclick="return get_search_text('zweibo')">微博</a></li>
-
+    <li><a href="http://search.zol.com.cn/s/" target="search_iframe" id="zol"
+           onclick="return get_search_text('zol')">ZOL</a></li>
 
     <!-- <li><a href="http://weibo.com/" target="search_iframe" id="weibo" onclick="return get_search_text('weibo')">微博</a></li> -->
     <!-- <li><a href="http://www.google.com" target="search_iframe" id="google" onclick="return get_search_text('google')">谷歌</a></li> -->
@@ -202,7 +227,7 @@
 </ul>
 
 
-<iframe onload="focus_in()" src="http://www.bing.com/search?q=一次输入，到处搜索" name="search_iframe" id="iframe_id"/>
+<iframe onload="focus_in()"  src="http://www.bing.com" name="search_iframe" id="iframe_id"/>
 
 
 </body>
