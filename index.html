@@ -22,7 +22,7 @@
         }
 
         ul {
-            background-color: yellow;
+            background-color: rgba(62,153,173, 0.72);
             position: fixed;
             left: 0;
             top: 6%;
@@ -44,6 +44,16 @@
             /*top: 0*/
         /*}*/
 
+        a {
+            text-decoration:none;
+            color:white;
+
+        }
+
+        #bing{
+             color:yellow;
+        }
+
         #search_form {
             /*background-color: yellow;*/
             display: inline;
@@ -63,7 +73,7 @@
 
         #search_button {
             display: inline;
-            background-color: rgb(62,153,173);
+            background-color: rgba(62,153,173,0.72);
             color: white;
             font-size: 19px;
             border: none;
@@ -106,85 +116,98 @@
             var search_text = search_input.value;
             // alert(idn);
             if (idn == 'bing') {
-                document.getElementById(idn).href = "http://www.bing.com/search?q=" + search_text;
-            }
+                document.getElementById(idn).href = "http://www.bing.com/search?q=" + search_text;}
+
             else if (idn == 'bai') {
-                document.getElementById(idn).href = "https://www.baidu.com/s?wd=" + search_text;
-            }
+                document.getElementById(idn).href = "https://www.baidu.com/s?wd=" + search_text;}
             // else if(idn == 'google'){
             // document.getElementById(idn).href = "https://gg.knight.ren/#newwidows=1&q=" + search_text;
             // }
             else if (idn == 'zhihu') {
-                document.getElementById(idn).href = "http://zhihu.sogou.com/zhihu?query=" + search_text;
+                document.getElementById(idn).href = "http://zhihu.sogou.com/zhihu?query=" + search_text;}
 
-            }
             else if (idn == 'weixin') {
-                document.getElementById(idn).href = "http://weixin.sogou.com/weixin?type=2&query=" + search_text;
-            }
-            else if (idn == 'taobao') {
-                document.getElementById(idn).href = "https://search.taobao.com/search?q=" + search_text;
-            }
-            else if (idn == 'jingdong') {
-                document.getElementById(idn).href = "http://search.jd.com/Search?keyword=" + search_text + "&enc=utf-8";
-            }
-            else if (idn == 'youku') {
-                document.getElementById(idn).href = "http://www.soku.com/search_video/q_" + search_text;
-            }
-            else if (idn == 'weibo') {
-                document.getElementById(idn).href = "http://s.weibo.com/weibo/" + search_text + "?topnav=1&wvr=6&b=1";
-            }
-            else if (idn == 'sogou') {
-                document.getElementById(idn).href = "https://www.sogou.com/web?query=" + search_text;
-            }
-            else if (idn == 'toutiao') {
-                document.getElementById(idn).href = "http://www.toutiao.com/search/?keyword=" + search_text
-            }
-            else if (idn == 'zweibo') {
-                document.getElementById(idn).href = "http://t.zhongsou.com/wb?w=" + search_text + "&utf=1";  // gb2312
+                document.getElementById(idn).href = "http://weixin.sogou.com/weixin?type=2&query=" + search_text;}
 
-            }
+            else if (idn == 'taobao') {
+                document.getElementById(idn).href = "https://search.taobao.com/search?q=" + search_text;}
+
+            else if (idn == 'jingdong') {
+                document.getElementById(idn).href = "http://search.jd.com/Search?keyword=" + search_text + "&enc=utf-8";}
+
+            else if (idn == 'youku') {
+                document.getElementById(idn).href = "http://www.soku.com/search_video/q_" + search_text;}
+
+            else if (idn == 'weibo') {
+                document.getElementById(idn).href = "http://s.weibo.com/weibo/" + search_text + "?topnav=1&wvr=6&b=1";}
+
+            else if (idn == 'sogou') {
+                document.getElementById(idn).href = "https://www.sogou.com/web?query=" + search_text;}
+
+            else if (idn == 'toutiao') {
+                document.getElementById(idn).href = "http://www.toutiao.com/search/?keyword=" + search_text}
+
+            else if (idn == 'zweibo') {
+                document.getElementById(idn).href = "http://t.zhongsou.com/wb?w=" + search_text + "&utf=1";} // gb2312
+
             else if (idn == 'zol') {
-                document.getElementById(idn).href = encodeURI("http://search.zol.com.cn/s/all.php?kword=" + search_text); // gbk
-            }
+                document.getElementById(idn).href = encodeURI("http://search.zol.com.cn/s/all.php?kword=" + search_text)} // gbk}
+
             else if (idn == 'douban') {
-                window.onbeforeunload = function () {
-                    return "Stay on this Page"
-                };
-                document.getElementById(idn).href = "https://www.douban.com/search?q=" + search_text;
-            }
+//                window.onbeforeunload = function () {
+//                    return "Stay on this Page"
+//                };
+                document.getElementById(idn).href = "https://www.douban.com/search?q=" + search_text;}
             else if (idn == 'baijia') {
-                document.getElementById(idn).href = encodeURI("http://baijia.baidu.com/?tn=search&word=" + search_text);
-            }
-//            else if (idn == 'jianshu') {
-//                document.getElementById(idn).href = encodeURI("http://www.jianshu.com/search?q=" + search_text);
-//            }
+                document.getElementById(idn).href = encodeURI("http://baijia.baidu.com/?tn=search&word=" + search_text);}
+
+            else if (idn == 'jianshu') {
+                document.getElementById(idn).href = encodeURI("http://www.jianshu.com/search?q=" + search_text);}
+
             else if (idn == '36kr') {
-                document.getElementById(idn).href = encodeURI("http://36kr.com/search/articles/" + search_text + "?");
-            }
+                document.getElementById(idn).href = encodeURI("http://36kr.com/search/articles/" + search_text + "?");}
+
             else if (idn == 'huxiu') {
-                document.getElementById(idn).href = encodeURI("http://www.huxiu.com/search.html?s=" + search_text );
-            }
+                document.getElementById(idn).href = encodeURI("http://www.huxiu.com/search.html?s=" + search_text );}
+
             else if (idn == 'leiphone') {
-                document.getElementById(idn).href = encodeURI("http://www.leiphone.com/search?s=" + search_text );
-            }
+                document.getElementById(idn).href = encodeURI("http://www.leiphone.com/search?s=" + search_text );}
 
             else if (idn == '360') {
-                document.getElementById(idn).href = encodeURI("http://www.so.com/s?q=" + search_text );
-            }
-            else if (idn == 'zhongsou') {
-                document.getElementById(idn).href = encodeURI("http://www.chinaso.com/search/pagesearch.htm?q=" + search_text );
-            }
+                document.getElementById(idn).href = encodeURI("http://www.so.com/s?q=" + search_text );}
 
+            else if (idn == 'zhongsou') {
+                document.getElementById(idn).href = encodeURI("http://www.chinaso.com/search/pagesearch.htm?q=" + search_text );}
+
+            else if (idn == 'amazon') {
+                document.getElementById(idn).href = encodeURI("https://www.amazon.cn/s/field-keywords=" + search_text);}
+
+
+            else if (idn == 'stackoverflow') {
+                document.getElementById(idn).href = encodeURI("http://stackoverflow.com/search?q=" + search_text);}
+
+            else if (idn == 'github') {
+                document.getElementById(idn).href = encodeURI("https://github.com/search?q=" + search_text);}
+
+            else if (idn == 'gist') {
+                document.getElementById(idn).href = encodeURI("https://gist.github.com/search?utf8=%E2%9C%93&q=" + search_text);}
 
             // focus 123_inup_box
             document.form_tag.haole_search_text.focus();
-            // set last engine
+
+            // clean last anchor color
+            document.getElementById(idn_last).style.color="white";
+            // set now anchor color
+            document.getElementById(idn).style.color="yellow";
+
+            // set next engine
             idn_last = idn;
         }
 
 
         function focus_in() {
             document.form_tag.haole_search_text.focus();
+            document.form_tag.haole_search_text.select();
 
         }
 
@@ -201,10 +224,12 @@
                 return false;
             }
         }
+
         // focus cursor in haole_search_box
         window.addEventListener('blur', function () {
             setTimeout(function(){focus_in()}, 100);
         });
+
 
     </script>
 
@@ -213,9 +238,6 @@
 
 
 <body>
-<!--<form id="cover" name="cover" onclick="focus_in()">-->
-<!--</form>-->
-
 
 <form id="search_form" name="form_tag">
     <input id="search_input" type="textarea" name="haole_search_text" placeholder="一次输入，到处搜索"   onkeydown="return click_button()"/>
@@ -225,7 +247,7 @@
 
 <ul>
     <!--通用搜索-->
-    <li><a href、="http://www.bing.com" target="search_iframe" id="bing"
+    <li><a href="http://www.bing.com" target="search_iframe" id="bing"
            onclick="return get_search_text('bing')">必应</a></li>
     <li><a href="https://www.baidu.com" target="search_iframe" id="bai"
            onclick="return get_search_text('bai')">百度</a></li>
@@ -245,15 +267,15 @@
            onclick="return get_search_text('toutiao')">头条</a></li>
     <li><a href="http://t.zhongsou.com/wb?" target="search_iframe" id="zweibo"
            onclick="return get_search_text('zweibo')">微博</a></li>
-    <li><a href="https://www.douban.com/search?" target="search_iframe" id="douban"
+    <li><a href="https://www.douban.com/search?" target="_blank" id="douban"
            onclick="return get_search_text('douban')">豆瓣</a></li>
     <li><a href="http://baijia.baidu.com/?tn=search&word=" target="search_iframe" id="baijia"
            onclick="return get_search_text('baijia')">百家</a></li>
-    <!--<li><a href="http://www.jianshu.com" target="search_iframe" id="jianshu"-->
-    <!--onclick="return get_search_text('jianshu')">简书</a></li>-->
+    <li><a href="http://www.jianshu.com" target="_blank" id="jianshu"
+           onclick="return get_search_text('jianshu')">简书</a></li>
 
     <!--视频搜索平台-->
-    <li><a hre、f="http://www.youku.com" target="search_iframe" id="youku"
+    <li><a href="http://www.youku.com" target="search_iframe" id="youku"
            onclick="return get_search_text('youku')">优酷</a></li>
 
 
@@ -272,14 +294,21 @@
            onclick="return get_search_text('taobao')">淘宝</a></li>
     <li><a href="https://search.jd.com" target="search_iframe" id="jingdong"
            onclick="return get_search_text('jingdong')">京东</a></li>
+    <li><a href="https://www.amazon.cn/s/field-keywords=" target="_blank" id="amazon"
+           onclick="return get_search_text('amazon')">亚逊</a></li>
 
     <!-- <li><a href="http://weibo.com/" target="search_iframe" id="weibo" onclick="return get_search_text('weibo')">微博</a></li> -->
     <!-- <li><a href="http://www.google.com" target="search_iframe" id="google" onclick="return get_search_text('google')">谷歌</a></li> -->
 
-    <!-- <li><a href="http://weixin.sogou.com/weixin?type=1&query=test" target="search_iframe" id="weixinhao">weixin</a></li> -->
+     <!--程序员搜索平台-->
+    <li><a href="http://stackoverflow.com/search?q=" target="_blank" id="stackoverflow"
+           onclick="return get_search_text('stackoverflow')">溢出</a></li>
+    <li><a href="https://github.com/search?q=" target="_blank" id="github"
+           onclick="return get_search_text('github')">基乎</a></li>
 
-    <!-- <li><a href="http://stackoverflow.com/search?q=test" target="search_iframe" id="stackoverflow">stackoverflow</a></li> -->
-    <!-- <li><a href="https://github.com/search?q=test" target="search_iframe" id="github">github</a></li> -->
+    <li><a href="https://gist.github.com/search?utf8=%E2%9C%93&q=" target="_blank" id="gist"
+           onclick="return get_search_text('gist')">基肆</a></li>
+
 
 </ul>
 
