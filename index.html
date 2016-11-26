@@ -99,10 +99,6 @@
             return datetime
         }
 
-        function init_search_url() {
-            search_url = "http://www.bing.com/search?q=" + now();
-            return search_url
-        }
 
         var idn_last = "bing"
         function get_search_text(idn) {
@@ -156,7 +152,33 @@
                 };
                 document.getElementById(idn).href = "https://www.douban.com/search?q=" + search_text;
             }
+            else if (idn == 'baijia') {
+                document.getElementById(idn).href = encodeURI("http://baijia.baidu.com/?tn=search&word=" + search_text);
+            }
+//            else if (idn == 'jianshu') {
+//                document.getElementById(idn).href = encodeURI("http://www.jianshu.com/search?q=" + search_text);
+//            }
+            else if (idn == '36kr') {
+                document.getElementById(idn).href = encodeURI("http://36kr.com/search/articles/" + search_text + "?");
+            }
+            else if (idn == 'huxiu') {
+                document.getElementById(idn).href = encodeURI("http://www.huxiu.com/search.html?s=" + search_text );
+            }
+            else if (idn == 'leiphone') {
+                document.getElementById(idn).href = encodeURI("http://www.leiphone.com/search?s=" + search_text );
+            }
+
+            else if (idn == '360') {
+                document.getElementById(idn).href = encodeURI("http://www.so.com/s?q=" + search_text );
+            }
+            else if (idn == 'zhongsou') {
+                document.getElementById(idn).href = encodeURI("http://www.chinaso.com/search/pagesearch.htm?q=" + search_text );
+            }
+
+
+            // focus 123_inup_box
             document.form_tag.haole_search_text.focus();
+            // set last engine
             idn_last = idn;
         }
 
@@ -202,30 +224,55 @@
 
 
 <ul>
-    <li><a href="http://www.bing.com" target="search_iframe" id="bing"
+    <!--通用搜索-->
+    <li><a href、="http://www.bing.com" target="search_iframe" id="bing"
            onclick="return get_search_text('bing')">必应</a></li>
     <li><a href="https://www.baidu.com" target="search_iframe" id="bai"
            onclick="return get_search_text('bai')">百度</a></li>
     <li><a href="https://www.sogou.com" target="search_iframe" id="sogou"
            onclick="return get_search_text('sogou')">搜狗</a></li>
-    <li><a href="http://zhihu.sogou.com" target="search_iframe" id="zhihu"
+    <li><a href="https://www.chinaso.com" target="search_iframe" id="zhongsou"
+           onclick="return get_search_text('zhongsou')">中搜</a></li>
+    <li><a href="https://www.so.com" target="search_iframe" id="360"
+           onclick="return get_search_text('360')">360s</a></li>
+
+    <!--内容平台搜索-->
+    <li><a href="h、ttp://zhihu.sogou.com" target="search_iframe" id="zhihu"
            onclick="return get_search_text('zhihu')">知乎</a></li>
     <li><a href="http://weixin.sogou.com" target="search_iframe" id="weixin"
            onclick="return get_search_text('weixin')">微信</a></li>
-    <li><a href="https://search.taobao.com" target="search_iframe" id="taobao"
-           onclick="return get_search_text('taobao')">淘宝</a></li>
-    <li><a href="https://search.jd.com" target="search_iframe" id="jingdong"
-           onclick="return get_search_text('jingdong')">京东</a></li>
-    <li><a href="http://www.youku.com" target="search_iframe" id="youku"
-           onclick="return get_search_text('youku')">优酷</a></li>
     <li><a href="http://www.toutiao.com" target="search_iframe" id="toutiao"
            onclick="return get_search_text('toutiao')">头条</a></li>
     <li><a href="http://t.zhongsou.com/wb?" target="search_iframe" id="zweibo"
            onclick="return get_search_text('zweibo')">微博</a></li>
-    <li><a href="http://search.zol.com.cn/s/" target="search_iframe" id="zol"
-           onclick="return get_search_text('zol')">ZOL</a></li>
     <li><a href="https://www.douban.com/search?" target="search_iframe" id="douban"
            onclick="return get_search_text('douban')">豆瓣</a></li>
+    <li><a href="http://baijia.baidu.com/?tn=search&word=" target="search_iframe" id="baijia"
+           onclick="return get_search_text('baijia')">百家</a></li>
+    <!--<li><a href="http://www.jianshu.com" target="search_iframe" id="jianshu"-->
+    <!--onclick="return get_search_text('jianshu')">简书</a></li>-->
+
+    <!--视频搜索平台-->
+    <li><a hre、f="http://www.youku.com" target="search_iframe" id="youku"
+           onclick="return get_search_text('youku')">优酷</a></li>
+
+
+    <!--科技媒体搜索-->
+    <li><a href="http://search.zol.com.cn/s/" target="search_iframe" id="zol"
+           onclick="return get_search_text('zol')">ZOL</a></li>
+    <li><a href="http://36kr.com/search/articles/" target="search_iframe" id="36kr"
+           onclick="return get_search_text('36kr')">36氪</a></li>
+    <li><a href="https://www.huxiu.com/search.html?s=" target="search_iframe" id="huxiu"
+           onclick="return get_search_text('huxiu')">虎嗅</a></li>
+    <li><a href="http://www.leiphone.com/search?s=" target="search_iframe" id="leiphone"
+           onclick="return get_search_text('leiphone')">雷锋</a></li>
+
+        <!--电商平台搜索-->
+    <li><a href="https://search.taobao.com" target="search_iframe" id="taobao"
+           onclick="return get_search_text('taobao')">淘宝</a></li>
+    <li><a href="https://search.jd.com" target="search_iframe" id="jingdong"
+           onclick="return get_search_text('jingdong')">京东</a></li>
+
     <!-- <li><a href="http://weibo.com/" target="search_iframe" id="weibo" onclick="return get_search_text('weibo')">微博</a></li> -->
     <!-- <li><a href="http://www.google.com" target="search_iframe" id="google" onclick="return get_search_text('google')">谷歌</a></li> -->
 
