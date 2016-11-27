@@ -69,6 +69,9 @@
             font-size: 19px;
             /*width:15%;*/
             height: 30px;
+            box-sizing:border-box;
+
+
         }
 
         #search_button {
@@ -77,7 +80,7 @@
             color: white;
             font-size: 19px;
             border: none;
-            display: inline-block;
+            /*display: inline-block;*/
             /*width:10%;*/
             height: 30px;
         }
@@ -158,6 +161,7 @@
 //                    return "Stay on this Page"
 //                };
                 document.getElementById(idn).href = "https://www.douban.com/search?q=" + search_text;}
+
             else if (idn == 'baijia') {
                 document.getElementById(idn).href = encodeURI("http://baijia.baidu.com/?tn=search&word=" + search_text);}
 
@@ -197,6 +201,7 @@
 
             // clean last anchor color
             document.getElementById(idn_last).style.color="white";
+
             // set now anchor color
             document.getElementById(idn).style.color="yellow";
 
@@ -259,7 +264,7 @@
            onclick="return get_search_text('360')">360s</a></li>
 
     <!--内容平台搜索-->
-    <li><a href="h、ttp://zhihu.sogou.com" target="search_iframe" id="zhihu"
+    <li><a href="http://zhihu.sogou.com" target="search_iframe" id="zhihu"
            onclick="return get_search_text('zhihu')">知乎</a></li>
     <li><a href="http://weixin.sogou.com" target="search_iframe" id="weixin"
            onclick="return get_search_text('weixin')">微信</a></li>
@@ -309,11 +314,13 @@
     <li><a href="https://gist.github.com/search?utf8=%E2%9C%93&q=" target="_blank" id="gist"
            onclick="return get_search_text('gist')">Gist</a></li>
 
+    <li><a target="_blank" id="ad"
+           onclick="return get_search_text('gist')">广告</a></li>
 
 </ul>
 
 
-<iframe onload="focus_in()" src="http://www.bing.com" name="search_iframe" id="iframe_id"/>
+<iframe onload="focus_in()" src="123haole_face.html" name="search_iframe" id="iframe_id"/>
 
 
 </body>
