@@ -21,7 +21,7 @@
 
         }
 
-        ul {
+        #ul_engine_list{
             background-color: rgba(62,153,173, 0.72);
             position: fixed;
             left: 0;
@@ -30,6 +30,19 @@
             border: 0;
             /*width: 2.72%*/
         }
+
+
+        #ul_aspact_list{
+            background-color: rgba(62,153,173, 0.72);
+            position: fixed;
+            right: 0;
+            top: 6%;
+            padding: 0;
+            border: 0;
+            /*width: 2.72%*/
+        }
+
+
 
         li {
             list-style-type: none;
@@ -44,7 +57,7 @@
             font-family:  Helvetica,      -apple-system,       "Nimbus Sans L",  "Liberation Sans",
             "Microsoft YaHei",       "Hiragino Sans GB", STHeiti,     "Source Han Sans SC", "Source Han Sans CN", "WenquanYi Zen Hei", "Wenquanyi Micro Hei",
             sans-serif;
-            font-weight:lighter;
+            /*font-weight:lighter;*/
 
         }
 
@@ -52,8 +65,29 @@
              color:yellow;
         }
 
+        #direction_selector {
+            display: inline;
+            font-size: 19px;
+            height: 33px;
+            box-sizing:border-box;
+
+            border: none;
+            background-color: rgba(62,153,173,0.72);
+            color: white;
+            /*position: fixed;*/
+            /*left: 50%;*/
+            /*margin-left:-10px;*/
+            /*top: 0;*/
+
+            /*font-family:  Helvetica,      -apple-system,       "Nimbus Sans L",  "Liberation Sans",*/
+            /*"Microsoft YaHei",       "Hiragino Sans GB", STHeiti,     "Source Han Sans SC", "Source Han Sans CN", "WenquanYi Zen Hei", "Wenquanyi Micro Hei",*/
+            /*sans-serif;*/
+            /*font-weight:lighter;*/
+
+        }
         #search_form {
             display: inline;
+
 
             position: fixed;
             right: 40%;
@@ -68,7 +102,7 @@
         #search_input {
             display: inline;
             font-size: 19px;
-            height: 30px;
+            height: 33px;
             box-sizing:border-box;
 
 
@@ -77,7 +111,7 @@
         #search_button {
             display: inline;
             font-size: 19px;
-            height: 30px;
+            height: 33px;
             box-sizing:border-box;
             
             border: none;
@@ -221,8 +255,9 @@
 
 
         function focus_in() {
-            document.form_tag.haole_search_text.focus();
-            document.form_tag.haole_search_text.select();
+            return true; //give user freedom please.
+//            document.form_tag.haole_search_text.focus();
+//            document.form_tag.haole_search_text.select();
 
         }
 
@@ -255,12 +290,22 @@
 <body>
 
 <form id="search_form" name="form_tag">
+        <select name = "direction" id="direction_selector">
+        <option value="程序员">程序员</option>
+        <option value="建筑师">建筑师</option>
+        </select>
     <input id="search_input" type="textarea" name="haole_search_text" placeholder="一次输入，到处搜索"   onkeydown="return click_button()"/>
     <input id="search_button" type="button" value="123好了" onclick="click_engine_anchor()"/>
 </form>
 
 
-<ul>
+    <!--<select name = "direction" id="direction">-->
+        <!--<option value="程序员">程序员</option>-->
+        <!--<option value="建筑师">建筑师</option>-->
+    <!--</select>-->
+
+
+<ul id="ul_engine_list">
     <!--通用搜索-->
     <li><a href="http://www.bing.com" target="search_iframe" id="bing"
            onclick="return get_search_text('bing')">必应</a></li>
@@ -339,8 +384,21 @@
 
 </ul>
 
+<ul id="ul_aspact_list">
+    <!--通用界面-->
+    <!--<li><a href="http://www.hao123.com" target="_blank" id="hao123">好123</a></li>-->
+    <li><a href="http://www.sina.com.cn" target="_blank" id="sina">新浪</a></li>
+    <li><a href="http://www.qq.com" target="_blank" id="qq">腾讯</a></li>
+    <li><a href="http://www.163.com" target="_blank" id="163">网易</a></li>
+    <li><a href="http://www.ifeng.com" target="_blank" id="ifeng">凤凰</a></li>
+    <li><a href="http://www.cctv.com" target="search_iframe" id="cctv">央视</a></li>
+</ul>
 
 <iframe onload="focus_in()" src="123haole_face.html" name="search_iframe" id="iframe_id"/>
+
+
+
+
 
 
 </body>
