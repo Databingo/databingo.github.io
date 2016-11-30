@@ -25,7 +25,8 @@
             background-color: rgba(62,153,173, 0.72);
             position: fixed;
             left: 0;
-            top: 6%;
+            top: 50%;
+            transform:translateY(-50%);
             padding: 0;
             border: 0;
             /*width: 2.72%*/
@@ -53,7 +54,7 @@
         a {
             text-decoration:none;
             color:white;
-            /*font-size: 19px;*/
+            font-size: 15px;
             font-family:  Helvetica,      -apple-system,       "Nimbus Sans L",  "Liberation Sans",
             "Microsoft YaHei",       "Hiragino Sans GB", STHeiti,     "Source Han Sans SC", "Source Han Sans CN", "WenquanYi Zen Hei", "Wenquanyi Micro Hei",
             sans-serif;
@@ -238,6 +239,25 @@
             else if (idn == 'meituan') {
                 document.getElementById(idn).href = encodeURI("http://meituan.com/s/?w=" + search_text);}
 
+            else if (idn == 'leshi') {
+                document.getElementById(idn).href = encodeURI("http://so.le.com/s?wd=" + search_text);}
+
+            else if (idn == 'iqiyi') {
+                document.getElementById(idn).href = encodeURI("http://so.iqiyi.com/so/q_" + search_text);}
+
+            else if (idn == 'pptv') {
+                document.getElementById(idn).href = encodeURI("http://search.pptv.com/s_video?kw=" + search_text);}
+
+            else if (idn == 'qqtv') {
+                document.getElementById(idn).href = encodeURI("http://v.qq.com/x/search?q=" + search_text);}
+
+
+            else if (idn == 'bilibili') {
+                document.getElementById(idn).href = encodeURI("http://search.bilibili.com/all?keyword=" + search_text);}
+
+
+
+
 
 
             // focus 123_inup_box
@@ -291,8 +311,12 @@
 
 <form id="search_form" name="form_tag">
         <select name = "direction" id="direction_selector">
+            <option value="程序员">普通人</option>
         <option value="程序员">程序员</option>
         <option value="建筑师">建筑师</option>
+            <option value="建筑师">视频控</option>
+            <option value="建筑师">剁手党</option>
+            <option value="建筑师">读书人</option>
         </select>
     <input id="search_input" type="textarea" name="haole_search_text" placeholder="一次输入，到处搜索"   onkeydown="return click_button()"/>
     <input id="search_button" type="button" value="123好了" onclick="click_engine_anchor()"/>
@@ -340,6 +364,18 @@
     <!--视频搜索平台-->
     <li><a href="http://www.youku.com" target="search_iframe" id="youku"
            onclick="return get_search_text('youku')">优酷</a></li>
+    <li><a href="http://www.le.com" target="search_iframe" id="leshi"
+           onclick="return get_search_text('leshi')">乐视</a></li>
+    <!--<li><a href="http://www.iqiyi.com" target="search_iframe" id="iqiyi"-->
+           <!--onclick="return get_search_text('iqiyi')">IQiyi</a></li>-->
+    <li><a href="http://www.pptv.com" target="search_iframe" id="pptv"
+           onclick="return get_search_text('pptv')">pptv</a></li>
+    <li><a href="http://www.v.qq.com" target="search_iframe" id="qqtv"
+           onclick="return get_search_text('qqtv')">qqtv</a></li>
+    <li><a href="http://www.bilibili.com" target="search_iframe" id="bilibili"
+           onclick="return get_search_text('bilibili')">哔哩</a></li>
+
+
 
     <!--地图搜索平台-->
     <li><a href="http://ditu.amap.com/search?query=" target="search_iframe" id="gaode"
