@@ -21,7 +21,7 @@
 
         }
 
-        #ul_engine_list{
+        #engine_list {
             background-color: rgba(62,153,173, 0.72);
             position: fixed;
             left: 0;
@@ -33,7 +33,7 @@
         }
 
 
-        #ul_aspact_list{
+        #web_aspact_list {
             background-color: rgba(62,153,173, 0.72);
             position: fixed;
             right: 0;
@@ -255,6 +255,10 @@
             else if (idn == 'bilibili') {
                 document.getElementById(idn).href = encodeURI("http://search.bilibili.com/all?keyword=" + search_text);}
 
+            else if (idn == 'segmentfault') {
+                document.getElementById(idn).href = encodeURI("https://segmentfault.com/search?q=" + search_text);}
+
+
 
 
 
@@ -301,6 +305,152 @@
         });
 
 
+var programmer_engine_list = `<!--程序员搜索-->
+    <li><a href="http://www.bing.com" target="search_iframe" id="bing" class="keep"
+           onclick="return get_search_text('bing')">必应</a></li>
+    <li><a href="https://www.sogou.com" target="search_iframe" id="sogou" class="keep"
+           onclick="return get_search_text('sogou')">搜狗</a></li>
+    <li><a href="http://zhihu.sogou.com" target="search_iframe" id="zhihu"
+           onclick="return get_search_text('zhihu')">知乎</a></li>
+    <li><a href="http://stackoverflow.com/search?q=" target="_blank" id="stackoverflow"
+           onclick="return get_search_text('stackoverflow')">Stack</a></li>
+    <li><a href="https://github.com/search?q=" target="_blank" id="github"
+           onclick="return get_search_text('github')">Github</a></li>
+    <li><a href="https://gist.github.com/search?utf8=%E2%9C%93&q=" target="_blank" id="gist"
+           onclick="return get_search_text('gist')">Gist</a></li>
+        <li><a href="https://www.segmentfault.com" target="search_iframe" id="segmentfault"
+           onclick="return get_search_text('segmentfault')">Segment</a></li>`
+
+var video_flow_engine_list = `
+    <!--视频搜索平台-->
+    <li><a href="http://www.youku.com" target="search_iframe" id="youku"
+           onclick="return get_search_text('youku')">优酷</a></li>
+    <li><a href="http://www.le.com" target="search_iframe" id="leshi"
+           onclick="return get_search_text('leshi')">乐视</a></li>
+    <!--<li><a href="http://www.iqiyi.com" target="search_iframe" id="iqiyi"-->
+           <!--onclick="return get_search_text('iqiyi')">IQiyi</a></li>-->
+    <li><a href="http://www.pptv.com" target="search_iframe" id="pptv"
+           onclick="return get_search_text('pptv')">pptv</a></li>
+    <li><a href="http://www.v.qq.com" target="search_iframe" id="qqtv"
+           onclick="return get_search_text('qqtv')">qqtv</a></li>
+    <li><a href="http://www.bilibili.com" target="search_iframe" id="bilibili"
+           onclick="return get_search_text('bilibili')">哔哩</a></li>`
+
+var normal_people_engine_list = `    <!--通用搜索-->
+    <li><a href="http://www.bing.com" target="search_iframe" id="bing" class="keep"
+           onclick="return get_search_text('bing')">必应</a></li>
+    <li><a href="https://www.baidu.com" target="search_iframe" id="bai" class="keep"
+           onclick="return get_search_text('bai')">百度</a></li>
+    <li><a href="https://www.sogou.com" target="search_iframe" id="sogou" class="keep"
+           onclick="return get_search_text('sogou')">搜狗</a></li>
+    <li><a href="https://www.chinaso.com" target="search_iframe" id="zhongsou" class="keep"
+           onclick="return get_search_text('zhongsou')">中搜</a></li>
+    <li><a href="https://www.so.com" target="search_iframe" id="360" class="keep"
+           onclick="return get_search_text('360')">360s</a></li>
+
+
+
+
+    <!--内容平台搜索-->
+    <li><a href="http://zhihu.sogou.com" target="search_iframe" id="zhihu"
+           onclick="return get_search_text('zhihu')">知乎</a></li>
+    <li><a href="http://weixin.sogou.com" target="search_iframe" id="weixin"
+           onclick="return get_search_text('weixin')">微信</a></li>
+    <li><a href="http://t.zhongsou.com/wb?" target="search_iframe" id="zweibo"
+           onclick="return get_search_text('zweibo')">微博</a></li>
+    <li><a href="https://www.douban.com/search?" target="_blank" id="douban"
+           onclick="return get_search_text('douban')">豆瓣</a></li>
+    <li><a href="http://www.toutiao.com" target="search_iframe" id="toutiao"
+           onclick="return get_search_text('toutiao')">头条</a></li>
+    <li><a href="http://baijia.baidu.com/?tn=search&word=" target="search_iframe" id="baijia"
+           onclick="return get_search_text('baijia')">百家</a></li>
+    <li><a href="http://www.jianshu.com" target="_blank" id="jianshu"
+           onclick="return get_search_text('jianshu')">简书</a></li>
+
+    <!--视频搜索平台-->
+    <li><a href="http://www.youku.com" target="search_iframe" id="youku"
+           onclick="return get_search_text('youku')">优酷</a></li>
+    <li><a href="http://www.le.com" target="search_iframe" id="leshi"
+           onclick="return get_search_text('leshi')">乐视</a></li>
+    <!--<li><a href="http://www.iqiyi.com" target="search_iframe" id="iqiyi"-->
+           <!--onclick="return get_search_text('iqiyi')">IQiyi</a></li>-->
+    <li><a href="http://www.pptv.com" target="search_iframe" id="pptv"
+           onclick="return get_search_text('pptv')">pptv</a></li>
+    <li><a href="http://www.v.qq.com" target="search_iframe" id="qqtv"
+           onclick="return get_search_text('qqtv')">qqtv</a></li>
+    <li><a href="http://www.bilibili.com" target="search_iframe" id="bilibili"
+           onclick="return get_search_text('bilibili')">哔哩</a></li>
+
+
+
+    <!--地图搜索平台-->
+    <li><a href="http://ditu.amap.com/search?query=" target="search_iframe" id="gaode"
+           onclick="return get_search_text('gaode')">高德</a></li>
+
+    <!--电商平台搜索-->
+    <li><a href="https://search.taobao.com" target="search_iframe" id="taobao"
+           onclick="return get_search_text('taobao')">淘宝</a></li>
+    <li><a href="https://search.jd.com" target="search_iframe" id="jingdong"
+           onclick="return get_search_text('jingdong')">京东</a></li>
+    <li><a href="https://www.amazon.cn/s/field-keywords=" target="_blank" id="amazon"
+           onclick="return get_search_text('amazon')">亚逊</a></li>
+    <li><a href="http://meituan.com/s/?w=" target="search_iframe" id="meituan"
+           onclick="return get_search_text('meituan')">美团</a></li>
+
+    <!--科技媒体搜索-->
+    <li><a href="http://search.zol.com.cn/s/" target="search_iframe" id="zol"
+           onclick="return get_search_text('zol')">ZOL</a></li>
+    <li><a href="http://36kr.com/search/articles/" target="search_iframe" id="36kr"
+           onclick="return get_search_text('36kr')">36kr</a></li>
+    <li><a href="https://www.huxiu.com/search.html?s=" target="search_iframe" id="huxiu"
+           onclick="return get_search_text('huxiu')">虎嗅</a></li>
+    <li><a href="http://www.leiphone.com/search?s=" target="search_iframe" id="leiphone"
+           onclick="return get_search_text('leiphone')">雷锋</a></li>
+
+
+
+    <!-- <li><a href="http://weibo.com/" target="search_iframe" id="weibo" onclick="return get_search_text('weibo')">微博</a></li> -->
+    <!-- <li><a href="http://www.google.com" target="search_iframe" id="google" onclick="return get_search_text('google')">谷歌</a></li> -->
+
+     <!--程序员搜索平台-->
+    <li><a href="http://stackoverflow.com/search?q=" target="_blank" id="stackoverflow"
+           onclick="return get_search_text('stackoverflow')">溢出</a></li>
+    <li><a href="https://github.com/search?q=" target="_blank" id="github"
+           onclick="return get_search_text('github')">基乎</a></li>
+
+    <li><a href="https://gist.github.com/search?utf8=%E2%9C%93&q=" target="_blank" id="gist"
+           onclick="return get_search_text('gist')">Gist</a></li>
+
+    <li><a target="advertisement.html" id="ad"
+           onclick="return get_search_text('ad')">广告</a></li>`
+
+
+
+
+        function right_tool(person){
+//            alert(person);
+//            var ul_children = document.getElementById("engine_list").children;
+//                var children_length = ul_children.length;
+//                for(var i = 0; i < children_length; i++){
+//                    var s = ul_children[i].children[0].id;
+//                    var e = document.getElementById(s);
+//                    var c = e.getAttribute("class")
+//                    if(c!="keep"){
+//                    e.parentNode.removeChild(e);}
+            document.getElementById("engine_list").innerHTML = ""
+            if (person == "程序员"){
+                document.getElementById("engine_list").innerHTML = programmer_engine_list}
+            else if (person == "普通人") {
+                document.getElementById("engine_list").innerHTML = normal_people_engine_list}
+            else if (person == "视频流") {
+                document.getElementById("engine_list").innerHTML = video_flow_engine_list}
+            else{
+                document.getElementById("engine_list").innerHTML = normal_people_engine_list}
+
+
+
+        }
+
     </script>
 
 
@@ -310,14 +460,15 @@
 <body>
 
 <form id="search_form" name="form_tag">
-        <select name = "direction" id="direction_selector">
-            <option value="程序员">普通人</option>
-        <option value="程序员">程序员</option>
-        <option value="建筑师">建筑师</option>
-            <option value="建筑师">视频控</option>
-            <option value="建筑师">剁手党</option>
-            <option value="建筑师">读书人</option>
-        </select>
+        <select name = "direction" id="direction_selector" onChange="right_tool(this.value)">
+            <option value="普通人">普通人</option>
+            <option value="程序员">程序员</option>
+            <!--<option value="手机控">手机控</option>-->
+            <option value="视频流">视频流</option>
+            <!--<option value="剁手党">剁手党</option>-->
+            <!--<option value="文青">文青</option>-->
+            <!--<option value="读书人">读书人</option>-->
+        </select>、
     <input id="search_input" type="textarea" name="haole_search_text" placeholder="一次输入，到处搜索"   onkeydown="return click_button()"/>
     <input id="search_button" type="button" value="123好了" onclick="click_engine_anchor()"/>
 </form>
@@ -329,17 +480,17 @@
     <!--</select>-->
 
 
-<ul id="ul_engine_list">
+<ul id="engine_list">
     <!--通用搜索-->
-    <li><a href="http://www.bing.com" target="search_iframe" id="bing"
+    <li><a href="http://www.bing.com" target="search_iframe" id="bing" class="keep"
            onclick="return get_search_text('bing')">必应</a></li>
-    <li><a href="https://www.baidu.com" target="search_iframe" id="bai"
+    <li><a href="https://www.baidu.com" target="search_iframe" id="bai" class="keep"
            onclick="return get_search_text('bai')">百度</a></li>
-    <li><a href="https://www.sogou.com" target="search_iframe" id="sogou"
+    <li><a href="https://www.sogou.com" target="search_iframe" id="sogou" class="keep"
            onclick="return get_search_text('sogou')">搜狗</a></li>
-    <li><a href="https://www.chinaso.com" target="search_iframe" id="zhongsou"
+    <li><a href="https://www.chinaso.com" target="search_iframe" id="zhongsou" class="keep"
            onclick="return get_search_text('zhongsou')">中搜</a></li>
-    <li><a href="https://www.so.com" target="search_iframe" id="360"
+    <li><a href="https://www.so.com" target="search_iframe" id="360" class="keep"
            onclick="return get_search_text('360')">360s</a></li>
 
 
@@ -420,7 +571,11 @@
 
 </ul>
 
-<ul id="ul_aspact_list">
+
+
+
+
+<ul id="web_aspact_list">
     <!--通用界面-->
     <!--<li><a href="http://www.hao123.com" target="_blank" id="hao123">好123</a></li>-->
     <li><a href="http://www.sina.com.cn" target="_blank" id="sina">新浪</a></li>
