@@ -286,6 +286,43 @@
             else if (idn == 'mgtv') {
                 document.getElementById(idn).href = encodeURI("http://so.mgtv.com/so?k=" + search_text);}
 
+            else if (idn == 'hackernews') {
+                document.getElementById(idn).href = encodeURI("https://hn.algolia.com/?query=" + search_text);}
+
+            else if (idn == 'codeproject') {
+            document.getElementById(idn).href = encodeURI("https://www.codeproject.com/search.aspx?q=" + search_text);}
+
+            else if (idn == 'quora') {
+            document.getElementById(idn).href = encodeURI("https://www.quora.com/search?q=" + search_text);}
+
+            else if (idn == 'iteye') {
+            document.getElementById(idn).href = encodeURI("http://www.iteye.com/search?type=all&query=" + search_text);}
+
+
+            else if (idn == 'baofeng') {
+            document.getElementById(idn).href = encodeURI("http://www.baofeng.com/q_" + search_text);}
+
+            else if (idn == '1905') {
+            document.getElementById(idn).href = encodeURI("http://www.1905.com/search/?q=" + search_text);}
+
+            else if (idn == 'cctv') {
+            document.getElementById(idn).href = encodeURI("http://search.cctv.com/search.php?qtext=" + search_text);}
+
+            else if (idn == 'ifengtv') {
+            document.getElementById(idn).href = encodeURI("http://so.v.ifeng.com/video?q=" + search_text);}
+
+            else if (idn == 'douban_movie') {
+            document.getElementById(idn).href = encodeURI("https://movie.douban.com/subject_search?search_text=" + search_text);}
+
+            else if (idn == 'sina_video') {
+            document.getElementById(idn).href = encodeURI("http://so.video.sina.com.cn/s?wd=" + search_text);}
+
+            else if (idn == 'kankan') {
+            document.getElementById(idn).href = encodeURI("http://search.kankan.com/search.php?keyword=" + search_text);}
+
+            else if (idn == 'ku6') {
+            document.getElementById(idn).href = encodeURI("http://so.ku6.com/search/?q=" + search_text);}
+
 
 
 
@@ -366,10 +403,17 @@ var programmer_engine_list =
                onclick="return get_search_text(\'csdn\')">CSDN</a></li>\
         <li><a href="http://www.cnblogs.com" target="search_iframe" id="cnblogs"\
                onclick="return get_search_text(\'cnblogs\')">Cnblogs</a></li>\
-        <li><a href="https://gold.xitu.io" target="search_iframe" id="juejin"\
+        <li><a href="https://news.ycombinator.com" target="search_iframe" id="hackernews"\
+               onclick="return get_search_text(\'hackernews\')">Hackernews</a></li>\
+        <li><a href="https://www.codeproject.com" target="_blank" id="codeproject"\
+               onclick="return get_search_text(\'codeproject\')">Codeproject</a></li>\
+        <li><a href="https://www.quora.com" target="_blank" id="quora"\
+               onclick="return get_search_text(\'quora\')">Quora</a></li>\
+        <li><a href="http://www.iteye.com" target="search_iframe" id="iteye"\
+               onclick="return get_search_text(\'iteye\')">Iteye</a></li>\
+        <li><a href="https://gold.xitu.io" target="search_ifrae" id="juejin"\
                onclick="return get_search_text(\'juejin\')">掘金</a></li>'
 
-        //juejin
 
 var video_flow_engine_list =
         '<!--视频搜索平台-->\
@@ -394,8 +438,27 @@ var video_flow_engine_list =
         <li><a href="http://www.mtime.com" target="search_iframe" id="mtime"\
                onclick="return get_search_text(\'mtime\')">时光</a></li>\
         <li><a href="http://www.mgtv.com" target="search_iframe" id="mgtv"\
-               onclick="return get_search_text(\'mgtv\')">芒果</a></li>'
-        //imdb
+               onclick="return get_search_text(\'mgtv\')">芒果</a></li>\
+        <li><a href="http://www.baofeng.com" target="search_iframe" id="baofeng"\
+               onclick="return get_search_text(\'baofeng\')">暴风</a></li>\
+        <li><a href="http://www.1905.com" target="search_iframe" id="1905"\
+               onclick="return get_search_text(\'1905\')">1905</a></li>\
+    <a href="http://search.cctv.com" target="search_iframe" id="cctv"\
+               onclick="return get_search_text(\'cctv\')">cctv</a></li>\
+        <li><a href="http://v.ifeng.com" target="search_iframe" id="ifengtv"\
+               onclick="return get_search_text(\'ifengtv\')">凤凰</a></li>\
+        <li><a href="https://movie.douban.com" target="_blank" id="douban_movie"\
+               onclick="return get_search_text(\'douban_movie\')">豆瓣</a></li>\
+        <li><a href="https://v.sina.com" target="search_iframe" id="sina_video"\
+               onclick="return get_search_text(\'sina_video\')">新浪</a></li>\
+        <li><a href="http://www.kankan.com" target="search_iframe" id="kankan"\
+               onclick="return get_search_text(\'kankan\')">看看</a></li>\
+        <li><a href="http://www.ku6.com" target="search_iframe" id="ku6"\
+               onclick="return get_search_text(\'ku6\')">酷六</a></li>'
+
+
+
+
 var phone_controler_engine_list =
         '<!--通用搜索-->\
         <li><a href="http://www.bing.com" target="search_iframe" id="bing" class="keep"\
