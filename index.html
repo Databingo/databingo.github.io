@@ -323,8 +323,14 @@
             else if (idn == 'ku6') {
             document.getElementById(idn).href = encodeURI("http://so.ku6.com/search/?q=" + search_text);}
 
+            else if (idn == 'vip') {
+            document.getElementById(idn).href = encodeURI("http://category.vip.com/?keyword=" + search_text);}
 
+            else if (idn == 'suning') {
+            document.getElementById(idn).href = encodeURI("http://search.suning.com/" + search_text + '/');}
 
+            else if (idn == 'mogujie') {
+            document.getElementById(idn).href = encodeURI("http://list.mogujie.com/s?q=" + search_text);}
 
 
 
@@ -512,6 +518,22 @@ var phone_controler_engine_list =
         <li><a href="http://www.leiphone.com/search?s=" target="search_iframe" id="leiphone"\
                onclick="return get_search_text(\'leiphone\')">雷锋</a></li>'
 
+var elecbuyer_engine_list =
+        '<!--电商平台搜索-->\
+        <li><a href="https://search.taobao.com" target="search_iframe" id="taobao"\
+               onclick="return get_search_text(\'taobao\')">淘宝</a></li>\
+        <li><a href="https://search.jd.com" target="search_iframe" id="jingdong"\
+               onclick="return get_search_text(\'jingdong\')">京东</a></li>\
+        <li><a href="http://meituan.com/s/?w=" target="search_iframe" id="meituan"\
+               onclick="return get_search_text(\'meituan\')">美团</a></li>\
+        <li><a href="http://www.vip.com" target="search_iframe" id="vip"\
+               onclick="return get_search_text(\'vip\')">唯品</a></li>\
+        <li><a href="https://www.suning.com" target="search_iframe" id="suning"\
+               onclick="return get_search_text(\'suning\')">苏宁</a></li>\
+        <li><a href="https://www.mogujie.com" target="search_iframe" id="mogujie"\
+               onclick="return get_search_text(\'mogujie\')">蘑菇</a></li>\
+        <li><a href="https://www.amazon.cn/s/field-keywords=" target="_blank" id="amazon"\
+               onclick="return get_search_text(\'amazon\')">亚逊</a></li>'
 
 var normal_people_engine_list =
         '<!--通用搜索-->\
@@ -608,6 +630,8 @@ var normal_people_engine_list =
                 document.getElementById("engine_list").innerHTML = video_flow_engine_list}
             else if (person == "手机控") {
                 document.getElementById("engine_list").innerHTML = phone_controler_engine_list}
+            else if (person == "网购族") {
+                document.getElementById("engine_list").innerHTML = elecbuyer_engine_list}
 
 
 
@@ -634,6 +658,7 @@ var normal_people_engine_list =
             <option value="程序员">程序员</option>
             <option value="视频流">视频流</option>
             <option value="手机控">手机控</option>
+            <option value="网购族">网购族</option>
             <!--<option value="剁手党">剁手党</option>-->
             <!--<option value="文青">文青</option>-->
             <!--<option value="读书人">读书人</option>-->
