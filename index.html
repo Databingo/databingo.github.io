@@ -44,11 +44,15 @@
             /*width: 2.72%*/
         }
 
-
+        ul{
+            color:white;
+            font-size: 15px;
+        }
 
         li {
             list-style-type: none;
             padding: 0;
+
         }
 
 
@@ -393,12 +397,6 @@ var programmer_engine_list =
         <li><a href="http://weixin.sogou.com" target="search_iframe" id="weixin"\
                onclick="return get_search_text(\'weixin\')">微信</a></li>\
         <!--程序员搜索-->\
-        <li><a href="http://stackoverflow.com/search?q=" target="_blank" id="stackoverflow"\
-               onclick="return get_search_text(\'stackoverflow\')">StackOver</a></li>\
-        <li><a href="https://github.com/search?q=" target="_blank" id="github"\
-               onclick="return get_search_text(\'github\')">Github</a></li>\
-        <li><a href="https://gist.github.com/search?utf8=%E2%9C%93&q=" target="_blank" id="gist"\
-               onclick="return get_search_text(\'gist\')">Gist</a></li>\
         <li><a href="https://www.segmentfault.com" target="search_iframe" id="segmentfault"\
                onclick="return get_search_text(\'segmentfault\')">Segment</a></li>\
         <li><a href="http://www.runoob.com" target="search_iframe" id="runoob"\
@@ -411,14 +409,21 @@ var programmer_engine_list =
                onclick="return get_search_text(\'cnblogs\')">Cnblogs</a></li>\
         <li><a href="https://news.ycombinator.com" target="search_iframe" id="hackernews"\
                onclick="return get_search_text(\'hackernews\')">Hackernews</a></li>\
+        <li><a href="http://www.iteye.com" target="search_iframe" id="iteye"\
+               onclick="return get_search_text(\'iteye\')">Iteye</a></li>\
+               ------\
         <li><a href="https://www.codeproject.com" target="_blank" id="codeproject"\
                onclick="return get_search_text(\'codeproject\')">Codeproject</a></li>\
         <li><a href="https://www.quora.com" target="_blank" id="quora"\
                onclick="return get_search_text(\'quora\')">Quora</a></li>\
-        <li><a href="http://www.iteye.com" target="search_iframe" id="iteye"\
-               onclick="return get_search_text(\'iteye\')">Iteye</a></li>\
         <li><a href="https://gold.xitu.io" target="search_ifrae" id="juejin"\
-               onclick="return get_search_text(\'juejin\')">掘金</a></li>'
+               onclick="return get_search_text(\'juejin\')">掘金</a></li> \
+        <li><a href="http://stackoverflow.com/search?q=" target="_blank" id="stackoverflow"\
+               onclick="return get_search_text(\'stackoverflow\')">StackOver</a></li>\
+        <li><a href="https://github.com/search?q=" target="_blank" id="github"\
+               onclick="return get_search_text(\'github\')">Github</a></li>\
+        <li><a href="https://gist.github.com/search?utf8=%E2%9C%93&q=" target="_blank" id="gist"\
+               onclick="return get_search_text(\'gist\')">Gist</a></li>'
 
 
 var video_flow_engine_list =
@@ -453,14 +458,15 @@ var video_flow_engine_list =
                onclick="return get_search_text(\'cctv\')">cctv</a></li>\
         <li><a href="http://v.ifeng.com" target="search_iframe" id="ifengtv"\
                onclick="return get_search_text(\'ifengtv\')">凤凰</a></li>\
-        <li><a href="https://movie.douban.com" target="_blank" id="douban_movie"\
-               onclick="return get_search_text(\'douban_movie\')">豆瓣</a></li>\
         <li><a href="https://v.sina.com" target="search_iframe" id="sina_video"\
                onclick="return get_search_text(\'sina_video\')">新浪</a></li>\
         <li><a href="http://www.kankan.com" target="search_iframe" id="kankan"\
                onclick="return get_search_text(\'kankan\')">看看</a></li>\
         <li><a href="http://www.ku6.com" target="search_iframe" id="ku6"\
-               onclick="return get_search_text(\'ku6\')">酷六</a></li>'
+               onclick="return get_search_text(\'ku6\')">酷六</a></li>\
+               ------\
+        <li><a href="https://movie.douban.com" target="_blank" id="douban_movie"\
+               onclick="return get_search_text(\'douban_movie\')">豆瓣</a></li>'
 
 
 
@@ -532,6 +538,7 @@ var elecbuyer_engine_list =
                onclick="return get_search_text(\'suning\')">苏宁</a></li>\
         <li><a href="https://www.mogujie.com" target="search_iframe" id="mogujie"\
                onclick="return get_search_text(\'mogujie\')">蘑菇</a></li>\
+               ------\
         <li><a href="https://www.amazon.cn/s/field-keywords=" target="_blank" id="amazon"\
                onclick="return get_search_text(\'amazon\')">亚逊</a></li>'
 
