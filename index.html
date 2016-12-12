@@ -114,11 +114,18 @@
         #search_button {
             display: inline;
             font-size: 22px;
-            height: 33px;
+            /*height: 33px;*/
             box-sizing: border-box;
             border: none;
             background-color: rgba(62, 153, 173, 0.72);
             color: white;
+
+
+
+            -ms-transform:rotate(90deg);
+            -moz-transform:rotate(90deg);
+            -webkit-transform:rotate(90deg);
+            -o-transform:rotate(90deg);
 
         }
 
@@ -651,6 +658,8 @@
 
         var elecbuyer_engine_list =
                 '<!--电商平台搜索-->\
+                <li><a href="http://www.bing.com" target="engine_result_iframe" id="bing"\
+                       onclick="return get_search_input(\'bing\')">必应</a></li>\
                 <li><a href="https://search.taobao.com" target="engine_result_iframe" id="taobao"\
                        onclick="get_search_input(\'taobao\')">淘宝</a></li>\
                 <li><a href="https://search.jd.com" target="engine_result_iframe" id="jingdong"\
@@ -801,7 +810,7 @@
         <option value="网购族">网购族</option>
     </select>
     <input id="search_input" type="text" placeholder="一次输入，到处搜索" onkeydown="return click_search_button()"/>
-    <input id="search_button" type="button" value="🔍" onclick="click_engine_anchor()"/> <!--放大镜 unicode 编码 u128269-->
+    <input id="search_button" type="button" value="☌" onclick="click_engine_anchor()"/> <!--放大镜 unicode 编码 u128269/☌ -->
 </form>
 
 
