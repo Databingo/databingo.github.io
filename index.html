@@ -43,6 +43,14 @@
             /*width: 2.72%*/
         }
 
+        #visitor_count {
+            position: fixed;
+            right: 0;
+            bottom: 0;
+            padding: 0;
+            border: 0;
+        }
+
         ul {
             color: white;
             font-size: 15px;
@@ -120,12 +128,10 @@
             background-color: rgba(62, 153, 173, 0.72);
             color: white;
 
-
-
-            -ms-transform:rotate(90deg);
-            -moz-transform:rotate(90deg);
-            -webkit-transform:rotate(90deg);
-            -o-transform:rotate(90deg);
+            -ms-transform: rotate(90deg);
+            -moz-transform: rotate(90deg);
+            -webkit-transform: rotate(90deg);
+            -o-transform: rotate(90deg);
 
         }
 
@@ -460,6 +466,59 @@
                 document.getElementById(idn).href = encodeURI("http://so.51cto.com/?keywords=" + search_text);
             }
 
+            else if (idn == 'pedaily') {
+                document.getElementById(idn).href = encodeURI("http://search.pedaily.cn/k" + search_text);
+            }
+
+            else if (idn == 'pedata') {
+                document.getElementById(idn).href = encodeURI("http://www.pedata.cn/search/recommend_1_" + search_text + ".html");
+            }
+
+            else if (idn == 'sohuit') {
+                document.getElementById(idn).href = encodeURI("http://it.sohu.com/search/index.shtml?wd=" + search_text);
+            }
+
+            else if (idn == 'itjuzi') {
+                document.getElementById(idn).href = encodeURI("https://www.itjuzi.com/search?key=" + search_text);
+            }
+
+            else if (idn == 'donews') {
+                document.getElementById(idn).href = encodeURI("http://search.donews.com/?kw=" + search_text);
+            }
+
+            else if (idn == 'lieyun') {
+                document.getElementById(idn).href = encodeURI("http://www.lieyunwang.com/s/" + search_text);
+            }
+
+            else if (idn == 'chinaz') {
+                document.getElementById(idn).href = encodeURI("http://so.chinaz.com/cse/search?s=13215756937974215344&entry=1&q=" + search_text);
+            }
+
+            else if (idn == 'tourongjie') {
+                document.getElementById(idn).href = encodeURI("http://xiangmu.trjcn.com/?k=" + search_text);
+            }
+
+            else if (idn == 'cyzone') {
+                document.getElementById(idn).href = encodeURI("http://www.cyzone.cn/index.php?m=search&wd=" + search_text);
+            }
+
+            else if (idn == 'pconline_phone') {
+                document.getElementById(idn).href = encodeURI("http://ks.pconline.com.cn/?q=" + search_text);
+            }
+
+//            else if (idn == '91_phone') {
+//                document.getElementById(idn).href = encodeURI("http://sou.91.com/cse/search?q=" + search_text + "&s=15990294403704732209");
+//            }
+
+            else if (idn == 'pcpop') {
+                document.getElementById(idn).href = encodeURI("http://so.pcpop.com/Article?q=" + search_text);
+            }
+
+            else if (idn == 'youdao') {
+                document.getElementById(idn).href = encodeURI("http://dict.youdao.com/w/eng/" + search_text + "/#keyfrom=dict2.index");
+            }
+
+
 
             else {
                 1 == 1;
@@ -513,6 +572,9 @@
                        onclick="return get_search_input(\'zhongsou\')">中搜</a></li>\
                 <li><a href="https://www.so.com" target="engine_result_iframe" id="360"\
                        onclick="return get_search_input(\'360\')">360s</a></li>\
+                <!--翻译搜索-->\
+                <li><a href="http://www.youdao.com" target="engine_result_iframe" id="youdao"\
+                       onclick="return get_search_input(\'youdao\')">有道</a></li>\
                 <!--内容平台-->\
                 <li><a href="http://zhihu.sogou.com" target="engine_result_iframe" id="zhihu"\
                        onclick="return get_search_input(\'zhihu\')">知乎</a></li>\
@@ -620,14 +682,10 @@
                        onclick="return get_search_input(\'weixin\')">微信</a></li>\
                 <li><a href="http://t.zhongsou.com/wb?" target="engine_result_iframe" id="zweibo"\
                        onclick="return get_search_input(\'zweibo\')">微博</a></li>\
-                <li><a href="https://www.douban.com/search?" target="_blank" id="douban"\
-                       onclick="return get_search_input(\'douban\')">豆瓣</a></li>\
                 <li><a href="http://www.toutiao.com" target="engine_result_iframe" id="toutiao"\
                        onclick="return get_search_input(\'toutiao\')">头条</a></li>\
                 <li><a href="http://baijia.baidu.com/?tn=search&word=" target="engine_result_iframe" id="baijia"\
                        onclick="return get_search_input(\'baijia\')">百家</a></li>\
-                <li><a href="http://www.jianshu.com" target="_blank" id="jianshu"\
-                       onclick="return get_search_input(\'jianshu\')">简书</a></li>\
                 <!--视频搜索平台-->\
                 <li><a href="http://www.youku.com" target="engine_result_iframe" id="youku"\
                        onclick="return get_search_input(\'youku\')">优酷</a></li>\
@@ -644,8 +702,6 @@
                        onclick="return get_search_input(\'taobao\')">淘宝</a></li>\
                 <li><a href="https://search.jd.com" target="engine_result_iframe" id="jingdong"\
                        onclick="return get_search_input(\'jingdong\')">京东</a></li>\
-                <li><a href="https://www.amazon.cn/s/field-keywords=" target="_blank" id="amazon"\
-                       onclick="return get_search_input(\'amazon\')">亚逊</a></li>\
                 <!--科技媒体搜索-->\
                 <li><a href="http://search.zol.com.cn/s/" target="engine_result_iframe" id="zol"\
                        onclick="return get_search_input(\'zol\')">ZOL</a></li>\
@@ -654,7 +710,21 @@
                 <li><a href="https://www.huxiu.com/search.html?s=" target="engine_result_iframe" id="huxiu"\
                        onclick="return get_search_input(\'huxiu\')">虎嗅</a></li>\
                 <li><a href="http://www.leiphone.com/search?s=" target="engine_result_iframe" id="leiphone"\
-                       onclick="return get_search_input(\'leiphone\')">雷锋</a></li>';
+                       onclick="return get_search_input(\'leiphone\')">雷锋</a></li>\
+                <li><a href="http://www.pconline.com.cn" target="engine_result_iframe" id="pconline_phone"\
+                       onclick="return get_search_input(\'pconline_phone\')">太平洋</a></li>\
+                <li><a href="http://www.pcpop.com" target="engine_result_iframe" id="pcpop"\
+                       onclick="return get_search_input(\'pcpop\')">PCpop</a></li>\
+                       ------\
+                <li><a href="https://www.douban.com/search?" target="_blank" id="douban"\
+                       onclick="return get_search_input(\'douban\')">豆瓣</a></li>\
+                <li><a href="http://www.jianshu.com" target="_blank" id="jianshu"\
+                       onclick="return get_search_input(\'jianshu\')">简书</a></li>\
+                <li><a href="https://www.amazon.cn/s/field-keywords=" target="_blank" id="amazon"\
+                       onclick="return get_search_input(\'amazon\')">亚逊</a></li>\
+                       ';
+
+
 
         var elecbuyer_engine_list =
                 '<!--电商平台搜索-->\
@@ -700,6 +770,29 @@
                 <li><a href="https://www.amazon.cn/s/field-keywords=" target="_blank" id="amazon"\
                        onclick="get_search_input(\'amazon\')">亚逊</a></li>';
 
+        var creator_engine_list =
+                '<li><a href="http://www.bing.com" target="engine_result_iframe" id="bing"\
+                        onclick="return get_search_input(\'bing\')">必应</a></li>\
+                <li><a href="http://www.pedaily.cn" target="engine_result_iframe" id="pedaily"\
+                       onclick="return get_search_input(\'pedaily\')">投资界</a></li>\
+                <li><a href="http://www.pedata.cn" target="engine_result_iframe" id="pedata"\
+                       onclick="return get_search_input(\'pedata\')">私募通</a></li>\
+                <li><a href="http://www.trjcn.com" target="engine_result_iframe" id="tourongjie"\
+                       onclick="return get_search_input(\'tourongjie\')">投融界</a></li>\
+                <li><a href="http://www.cyzone.cn" target="engine_result_iframe" id="cyzone"\
+                       onclick="return get_search_input(\'cyzone\')">创业邦</a></li>\
+                <li><a href="https://www.itjuzi.com" target="engine_result_iframe" id="itjuzi"\
+                       onclick="return get_search_input(\'itjuzi\')">IT橘子</a></li>\
+                <li><a href="http://www.it.sohu.com" target="engine_result_iframe" id="sohuit"\
+                       onclick="return get_search_input(\'sohuit\')">搜狐IT</a></li>\
+                <li><a href="http://www.lieyunwang.com" target="engine_result_iframe" id="lieyun"\
+                       onclick="return get_search_input(\'lieyun\')">猎云</a></li>\
+                <li><a href="http://www.chinaz.com" target="engine_result_iframe" id="chinaz"\
+                       onclick="return get_search_input(\'chinaz\')">ChinaZ</a></li>\
+                <li><a href="http://www.donews.com" target="engine_result_iframe" id="donews"\
+                       onclick="return get_search_input(\'donews\')">DoNews</a></li>\
+                       '
+
 
         var normal_people_engine_list =
                 '<!--通用搜索-->\
@@ -713,6 +806,9 @@
                        onclick="return get_search_input(\'zhongsou\')">中搜</a></li>\
                 <li><a href="https://www.so.com" target="engine_result_iframe" id="360"\
                        onclick="return get_search_input(\'360\')">360s</a></li>\
+                <!--翻译搜索-->\
+                <li><a href="http://www.youdao.com" target="engine_result_iframe" id="youdao"\
+                       onclick="return get_search_input(\'youdao\')">有道</a></li>\
                 <!--内容平台搜索-->\
                 <li><a href="http://zhihu.sogou.com" target="engine_result_iframe" id="zhihu"\
                        onclick="return get_search_input(\'zhihu\')">知乎</a></li>\
@@ -782,6 +878,11 @@
             else if (role == "网购族") {
                 document.getElementById("engine_list").innerHTML = elecbuyer_engine_list;
             }
+            else if (role == "创构者") {
+                document.getElementById("engine_list").innerHTML = creator_engine_list;
+            }
+
+
             else {
                 document.getElementById("engine_list").innerHTML = normal_people_engine_list;
             }
@@ -804,10 +905,12 @@
 <form id="search_form">
     <select id="role_selector" onChange="get_right_tool_for(this.value)">
         <option value="普通人">普通人</option>
-        <option value="程序员">程序员</option>
         <option value="视频流">视频流</option>
         <option value="手机控">手机控</option>
         <option value="网购族">网购族</option>
+        <option value="程序员">程序员</option>
+        <option value="创构者">创构者</option>
+
     </select>
     <input id="search_input" type="text" placeholder="一次输入，到处搜索" onkeydown="return click_search_button()"/>
     <input id="search_button" type="button" value="☌" onclick="click_engine_anchor()"/> <!--放大镜 unicode 编码 u128269/☌ -->
@@ -826,6 +929,9 @@
            onclick="return get_search_input('zhongsou')">中搜</a></li>
     <li><a href="https://www.so.com" target="engine_result_iframe" id="360"
            onclick="return get_search_input('360')">360s</a></li>
+    <!--翻译搜索-->
+    <li><a href="http://www.youdao.com" target="engine_result_iframe" id="youdao"
+           onclick="return get_search_input('youdao')">有道</a></li>
     <!--内容平台搜索-->
     <li><a href="http://zhihu.sogou.com" target="engine_result_iframe" id="zhihu"
            onclick="return get_search_input('zhihu')">知乎</a></li>
@@ -893,6 +999,9 @@
 <iframe onload="focus_in_input()" src="123haole_face.html" name="engine_result_iframe"
         id="engine_result_iframe"></iframe>
 
-
+<a id="visitor_count" href="http://info.flagcounter.com/Y8t0"><img
+        src="http://s10.flagcounter.com/mini/Y8t0/bg_FFFFFF/txt_000000/border_CCCCCC/flags_0/" alt="Flag Counter"
+        border="0"></a>
+<!--flagcounter-->
 </body>
 </html>
