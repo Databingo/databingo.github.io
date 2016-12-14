@@ -518,6 +518,26 @@
                 document.getElementById(idn).href = encodeURI("http://dict.youdao.com/w/eng/" + search_text + "/#keyfrom=dict2.index");
             }
 
+            else if (idn == 'chuangtouku') {
+                document.getElementById(idn).href = encodeURI("http://www.cyzone.cn/index.php?tpl=dbsearch&wq=" + search_text);
+            }
+
+
+            else if (idn == 'newseed') {
+                document.getElementById(idn).href = encodeURI("http://newseed.pedaily.cn/search/k" + search_text);
+            }
+
+            else if (idn == 'tech2ipo') {
+                document.getElementById(idn).href = encodeURI("http://chuang.pro/search?keyword=" + search_text);
+            }
+
+            else if (idn == 'iheima') {
+                document.getElementById(idn).href = encodeURI("http://app.iheima.com/?app=search&controller=index&action=search&type=all&wd=" + search_text);
+            }
+
+            else if (idn == 'jufaanli') {
+                document.getElementById(idn).href = encodeURI("http://www.jufaanli.com/searchlaw?TypeKey=d%3A" + search_text + "%3Bd&isFirstPage=1");
+            }
 
 
             else {
@@ -723,7 +743,6 @@
                        ';
 
 
-
         var elecbuyer_engine_list =
                 '<!--电商平台搜索-->\
                 <li><a href="http://www.bing.com" target="engine_result_iframe" id="bing"\
@@ -775,22 +794,35 @@
                        onclick="return get_search_input(\'pedaily\')">投资界</a></li>\
                 <li><a href="http://www.pedata.cn" target="engine_result_iframe" id="pedata"\
                        onclick="return get_search_input(\'pedata\')">私募通</a></li>\
+                <li><a href="http://www.newseed.pedaily.cn" target="engine_result_iframe" id="newseed"\
+                       onclick="return get_search_input(\'newseed\')">新芽</a></li>\
                 <li><a href="http://www.trjcn.com" target="engine_result_iframe" id="tourongjie"\
                        onclick="return get_search_input(\'tourongjie\')">投融界</a></li>\
                 <li><a href="http://www.cyzone.cn" target="engine_result_iframe" id="cyzone"\
                        onclick="return get_search_input(\'cyzone\')">创业邦</a></li>\
+                <li><a href="http://www.cyzone.cn/vcompany/list-0-0-1/" target="engine_result_iframe" id="chuangtouku"\
+                       onclick="return get_search_input(\'chuangtouku\')">创投库</a></li>\
+                <li><a href="http://tech2ipo.com" target="engine_result_iframe" id="tech2ipo"\
+                       onclick="return get_search_input(\'tech2ipo\')">创见</a></li>\
                 <li><a href="https://www.itjuzi.com" target="engine_result_iframe" id="itjuzi"\
                        onclick="return get_search_input(\'itjuzi\')">IT橘子</a></li>\
                 <li><a href="http://www.it.sohu.com" target="engine_result_iframe" id="sohuit"\
                        onclick="return get_search_input(\'sohuit\')">搜狐IT</a></li>\
+                <li><a href="http://www.iheima.com" target="engine_result_iframe" id="iheima"\
+                       onclick="return get_search_input(\'iheima\')">I黑马</a></li>\
                 <li><a href="http://www.lieyunwang.com" target="engine_result_iframe" id="lieyun"\
                        onclick="return get_search_input(\'lieyun\')">猎云</a></li>\
                 <li><a href="http://www.chinaz.com" target="engine_result_iframe" id="chinaz"\
                        onclick="return get_search_input(\'chinaz\')">ChinaZ</a></li>\
                 <li><a href="http://www.donews.com" target="engine_result_iframe" id="donews"\
                        onclick="return get_search_input(\'donews\')">DoNews</a></li>\
-                       '
+                       ';
 
+
+        var lawyer_engine_list =
+                '<li><a href="http://www.jufaanli.com" target="engine_result_iframe" id="jufaanli"\
+                        onclick="return get_search_input(\'jufaanli\')">聚法</a></li>\
+                ';
 
         var normal_people_engine_list =
                 '<!--通用搜索-->\
@@ -879,6 +911,9 @@
             else if (role == "创构者") {
                 document.getElementById("engine_list").innerHTML = creator_engine_list;
             }
+            else if (role == "律师") {
+                document.getElementById("engine_list").innerHTML = lawyer_engine_list;
+            }
 
 
             else {
@@ -908,6 +943,7 @@
         <option value="网购族">网购族</option>
         <option value="程序员">程序员</option>
         <option value="创构者">创构者</option>
+        <option value="律师">律师</option>
 
     </select>
     <input id="search_input" type="text" placeholder="一次输入，到处搜索" onkeydown="return click_search_button()"/>
