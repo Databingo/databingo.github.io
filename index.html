@@ -539,6 +539,44 @@
                 document.getElementById(idn).href = encodeURI("http://www.jufaanli.com/searchlaw?TypeKey=d%3A" + search_text + "%3Bd&isFirstPage=1");
             }
 
+            else if (idn == 'lawstar') {
+                document.getElementById(idn).href = encodeURI("http://law1.law-star.com/search?kw=" + search_text);
+            }
+
+            else if (idn == 'flssw') {
+                document.getElementById(idn).href = encodeURI("http://so.flssw.com/?q=" + search_text);
+            }
+
+            else if (idn == 'lexiscn') {
+                document.getElementById(idn).href = encodeURI("https://hk.lexiscn.com/search/index?keyword=" + search_text);
+            }
+
+            else if (idn == 'itslaw') {
+                document.getElementById(idn).href = "http://www.itslaw.com/search?searchMode=judgements&sortType=1&conditions=searchWord%2B" + search_text + "%2B1%2B" + search_text;
+            }
+
+            else if (idn == 'legalminer') {
+                document.getElementById(idn).href = encodeURI("http://www.legalminer.com/search/cases?t=" + search_text);
+            }
+
+            else if (idn == 'classiclaw') {
+                document.getElementById(idn).href = encodeURI("http://www.classiclaw.com/#/dictionaries/show?keywords=" + search_text);
+            }
+
+
+            else if (idn == 'civillaw') {
+                document.getElementById(idn).href = "http://www.civillaw.com.cn/search/?k=" + escape(search_text) + "&s|0";
+            }
+
+            else if (idn == 'wenshu') {
+                document.getElementById(idn).href = encodeURI("http://wenshu.court.gov.cn/list/list/?sorttype=1&conditions=searchWord+QWJS+++全文检索:" + search_text);
+            }
+
+            else if (idn == 'bailaw') {
+                document.getElementById(idn).href = encodeURI("http://law.baidu.com/mis/search-word?word=" + search_text);
+            }
+
+
 
             else {
                 1 == 1;
@@ -822,7 +860,26 @@
         var lawyer_engine_list =
                 '<li><a href="http://www.jufaanli.com" target="engine_result_iframe" id="jufaanli"\
                         onclick="return get_search_input(\'jufaanli\')">聚法</a></li>\
-                ';
+                <li><a href="http://law1.law-star.com" target="engine_result_iframe" id="lawstar"\
+                        onclick="return get_search_input(\'lawstar\')">法律之星</a></li>\
+                <li><a href="http://www.flssw.com" target="engine_result_iframe" id="flssw"\
+                        onclick="return get_search_input(\'flssw\')">法律搜索网</a></li>\
+                <li><a href="https://hk.lexiscn.com" target="engine_result_iframe" id="lexiscn"\
+                        onclick="return get_search_input(\'lexiscn\')">律商网</a></li>\
+                <li><a href="http://.com" target="engine_result_iframe" id="itslaw"\
+                        onclick="return get_search_input(\'itslaw\')">无讼案例</a></li>\
+                <li><a href="http://www.legalminer.com" target="engine_result_iframe" id="legalminer"\
+                        onclick="return get_search_input(\'legalminer\')">理脉</a></li>\
+                <li><a href="http://www.civillaw.com.cn" target="engine_result_iframe" id="civillaw"\
+                       onclick="return get_search_input(\'civillaw\')">Civillaw</a></li>\
+                <li><a href="http://wenshu.court.gov.cn" target="engine_result_iframe" id="wenshu"\
+                       onclick="return get_search_input(\'wenshu\')">裁判文书</a></li>\
+                <li><a href="http://law.baidu.com" target="engine_result_iframe" id="bailaw"\
+                       onclick="return get_search_input(\'bailaw\')"> 百度法律</a></li>\
+                        ------\
+                <li><a href="http://www.classiclaw.com" target="_blank" id="classiclaw"\
+                        onclick="return get_search_input(\'classiclaw\')">九章</a></li>\
+                        ';
 
         var normal_people_engine_list =
                 '<!--通用搜索-->\
