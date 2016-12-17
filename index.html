@@ -1076,8 +1076,6 @@
                         ';
 
 
-
-
         var normal_people_engine_list =
                 '<!--通用搜索-->\
                 <li><a href="http://www.bing.com" target="engine_result_iframe" id="bing"\
@@ -1191,7 +1189,7 @@
 </head>
 
 
-<body onload="document.getElementById('engine_list').innerHTML = normal_people_engine_list;">
+<body>
 
 <form id="search_form">
     <select id="role_selector" onChange="get_right_tool_for(this.value)">
@@ -1232,4 +1230,5 @@
         border="0"></a>
 <!--flagcounter-->
 </body>
+<script>document.getElementById('engine_list').innerHTML = normal_people_engine_list;</script>
 </html>
