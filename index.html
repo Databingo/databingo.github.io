@@ -596,6 +596,72 @@
             }
 
 
+            else if (idn == 'flickr') {
+                document.getElementById(idn).href = encodeURI("https://www.flickr.com/search/?text=" + search_text);
+            }
+
+
+            else if (idn == '500px') {
+                document.getElementById(idn).href = encodeURI("https://500px.com/search?q=" + search_text + "&type=photos&sort=relevance");
+            }
+
+            else if (idn == 'huaban') {
+                document.getElementById(idn).href = encodeURI("http://huaban.com/search/?q=" + search_text);
+            }
+
+            else if (idn == 'pixabay') {
+                document.getElementById(idn).href = encodeURI("https://pixabay.com/en/photos/?q=" + search_text);
+            }
+
+            else if (idn == 'unsplash') {
+                document.getElementById(idn).href = encodeURI("https://unsplash.com/search/" + search_text);
+            }
+
+            else if (idn == 'zcool') {
+                document.getElementById(idn).href = encodeURI("http://www.zcool.com.cn/tosearch.do?world=" + search_text);
+            }
+
+            else if (idn == 'freeimages') {
+                document.getElementById(idn).href = encodeURI("http://www.freeimages.com/search/" + search_text);
+            }
+
+            else if (idn == 'logopond') {
+                document.getElementById(idn).href = encodeURI("https://logopond.com/search/?search=" + search_text);
+            }
+
+            else if (idn == 'picjumpo') {
+                document.getElementById(idn).href = encodeURI("https://picjumbo.com/?s=" + search_text);
+            }
+
+            else if (idn == 'iconfinder') {
+                document.getElementById(idn).href = encodeURI("https://www.iconfinder.com/search/?q=" + search_text);
+            }
+
+            else if (idn == 'thenounproject') {
+                document.getElementById(idn).href = encodeURI("https://thenounproject.com/search/?q=" + search_text);
+            }
+
+            else if (idn == 'deviantart') {
+                document.getElementById(idn).href = encodeURI("http://www.deviantart.com/browse/all/?q=" + search_text);
+            }
+
+            else if (idn == 'easyicon') {
+                document.getElementById(idn).href = encodeURI("http://www.easyicon.net/language.en/iconsearch/" + search_text);
+            }
+
+            else if (idn == 'iconarchive') {
+                document.getElementById(idn).href = encodeURI("http://www.iconarchive.com/search?q=" + search_text);
+            }
+
+            else if (idn == 'quanjing') {
+                document.getElementById(idn).href = encodeURI("http://www.quanjing.com/search.aspx?q=" + search_text);
+            }
+
+            else if (idn == 'librestock') {
+                document.getElementById(idn).href = encodeURI("http://librestock.com/search/?query=" + search_text);
+            }
+
+
             else {
                 1 == 1;
             }
@@ -902,15 +968,48 @@
 
         var designer_engine_list =
                 '<li><a href="http://bing.com/images/trending?FORM=ILPTRD" target="engine_result_iframe" id="pic_bing"\
-                        onclick="return get_search_input(\'pic_bing\')">必应图片</a></li>\
+                        onclick="return get_search_input(\'pic_bing\')">必应</a></li>\
                 <li><a href="http://pic.sogou.com" target="engine_result_iframe" id="pic_sogou"\
-                        onclick="return get_search_input(\'pic_sogou\')">搜狗图片</a></li>\
+                        onclick="return get_search_input(\'pic_sogou\')">搜狗</a></li>\
                 <li><a href="http://image.baidu.com" target="engine_result_iframe" id="pic_baidu"\
-                        onclick="return get_search_input(\'pic_baidu\')">百度图片</a></li>\
+                        onclick="return get_search_input(\'pic_baidu\')">百度</a></li>\
                 <li><a href="http://image.chinaso.com" target="engine_result_iframe" id="pic_chinaso"\
-                        onclick="return get_search_input(\'pic_chinaso\')">中搜图片</a></li>\
+                        onclick="return get_search_input(\'pic_chinaso\')">中搜</a></li>\
                 <li><a href="http://image.so.com" target="engine_result_iframe" id="pic_360"\
-                        onclick="return get_search_input(\'pic_360\')">360图片</a></li>\
+                        onclick="return get_search_input(\'pic_360\')">360</a></li>\
+                <li><a href="http://www.quanjing.com" target="engine_result_iframe" id="quanjing"\
+                        onclick="return get_search_input(\'quanjing\')">全景</a></li>\
+                <li><a href="http://huaban.com" target="engine_result_iframe" id="huaban"\
+                        onclick="return get_search_input(\'huaban\')">花瓣</a></li>\
+                <li><a href="http://pixabay.com" target="engine_result_iframe" id="pixabay"\
+                        onclick="return get_search_input(\'pixabay\')">Pixabay</a></li>\
+                <li><a href="https://picjumpo.com" target="engine_result_iframe" id="picjumpo"\
+                        onclick="return get_search_input(\'picjumpo\')">Picjumpo</a></li>\
+                <li><a href="http://freeimages.com" target="engine_result_iframe" id="freeimages"\
+                        onclick="return get_search_input(\'freeimages\')">Freeimages</a></li>\
+                <li><a href="https://thenounproject.com" target="engine_result_iframe" id="thenounproject"\
+                        onclick="return get_search_input(\'thenounproject\')">Thenounproject</a></li>\
+                <li><a href="http://www.deviantart.com" target="engine_result_iframe" id="deviantart"\
+                        onclick="return get_search_input(\'deviantart\')">Deviantart</a></li>\
+                <li><a href="http://www.easyicon.net" target="engine_result_iframe" id="easyicon"\
+                        onclick="return get_search_input(\'easyicon\')">Easyicon</a></li>\
+                <li><a href="http://www.iconarchive.com" target="engine_result_iframe" id="iconarchive"\
+                        onclick="return get_search_input(\'iconarchive\')">Iconarchive</a></li>\
+                        ------\
+                <li><a href="http://librestock.com" target="_blank" id="librestock"\
+                        onclick="return get_search_input(\'librestock\')">Librestock</a></li>\
+                <li><a href="https://iconfinder.com" target="_blank" id="iconfinder"\
+                        onclick="return get_search_input(\'iconfinder\')">Iconfinder</a></li>\
+                <li><a href="http://www.flickr.com" target=")blank" id="flickr"\
+                        onclick="return get_search_input(\'flickr\')">Flickr</a></li>\
+                <li><a href="http://www.zcool.com.cn" target="_blank" id="zcool"\
+                        onclick="return get_search_input(\'zcool\')">站酷</a></li>\
+                <li><a href="https://500px.com" target="_blank" id="500px"\
+                        onclick="return get_search_input(\'500px\')">500px</a></li>\
+                <li><a href="https://unsplash.com" target="_blank" id="unsplash"\
+                        onclick="return get_search_input(\'unsplash\')">Unsplash</a></li>\
+                <li><a href="https://logopond.com" target="_blank" id="logopond"\
+                        onclick="return get_search_input(\'logopond\')">Logopond</a></li>\
                         ';
 
 
