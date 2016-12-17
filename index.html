@@ -576,6 +576,24 @@
                 document.getElementById(idn).href = encodeURI("http://law.baidu.com/mis/search-word?word=" + search_text);
             }
 
+            else if (idn == 'pic_bing') {
+                document.getElementById(idn).href = encodeURI("http://bing.com/images/search?q=" + search_text);
+            }
+            else if (idn == 'pic_sogou') {
+                document.getElementById(idn).href = encodeURI("http://pic.sogou.com/pics?query=" + search_text);
+            }
+
+            else if (idn == 'pic_baidu') {
+                document.getElementById(idn).href = encodeURI("http://image.baidu.com/search/index?tn=baiduimage&word=" + search_text);
+            }
+
+            else if (idn == 'pic_chinaso') {
+                document.getElementById(idn).href = encodeURI("http://image.chinaso.com/so?q=" + search_text);
+            }
+
+            else if (idn == 'pic_360') {
+                document.getElementById(idn).href = encodeURI("http://image.so.com/i?q=" + search_text);
+            }
 
 
             else {
@@ -881,6 +899,22 @@
                         onclick="return get_search_input(\'classiclaw\')">九章</a></li>\
                         ';
 
+
+        var designer_engine_list =
+                '<li><a href="http://bing.com/images/trending?FORM=ILPTRD" target="engine_result_iframe" id="pic_bing"\
+                        onclick="return get_search_input(\'pic_bing\')">必应图片</a></li>\
+                <li><a href="http://pic.sogou.com" target="engine_result_iframe" id="pic_sogou"\
+                        onclick="return get_search_input(\'pic_sogou\')">搜狗图片</a></li>\
+                <li><a href="http://image.baidu.com" target="engine_result_iframe" id="pic_baidu"\
+                        onclick="return get_search_input(\'pic_baidu\')">百度图片</a></li>\
+                <li><a href="http://image.chinaso.com" target="engine_result_iframe" id="pic_chinaso"\
+                        onclick="return get_search_input(\'pic_chinaso\')">中搜图片</a></li>\
+                <li><a href="http://image.so.com" target="engine_result_iframe" id="pic_360"\
+                        onclick="return get_search_input(\'pic_360\')">360图片</a></li>\
+                        ';
+
+
+
         var normal_people_engine_list =
                 '<!--通用搜索-->\
                 <li><a href="http://www.bing.com" target="engine_result_iframe" id="bing"\
@@ -971,7 +1005,9 @@
             else if (role == "律师") {
                 document.getElementById("engine_list").innerHTML = lawyer_engine_list;
             }
-
+            else if (role == "设计师") {
+                document.getElementById("engine_list").innerHTML = designer_engine_list;
+            }
 
             else {
                 document.getElementById("engine_list").innerHTML = normal_people_engine_list;
@@ -999,6 +1035,7 @@
         <option value="手机控">手机控</option>
         <option value="网购族">网购族</option>
         <option value="程序员">程序员</option>
+        <option value="设计师">设计师</option>
         <option value="创构者">创构者</option>
         <option value="律师">律师</option>
 
