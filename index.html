@@ -128,10 +128,10 @@
             background-color: rgba(62, 153, 173, 0.72);
             color: white;
 
-            -ms-transform: rotate(90deg);
-            -moz-transform: rotate(90deg);
-            -webkit-transform: rotate(90deg);
-            -o-transform: rotate(90deg);
+            /*-ms-transform: rotate(90deg);*/
+            /*-moz-transform: rotate(90deg);*/
+            /*-webkit-transform: rotate(90deg);*/
+            /*-o-transform: rotate(90deg);*/
 
         }
 
@@ -691,12 +691,29 @@
 
             else if (idn == 'video_360') {
                     document.getElementById(idn).href = encodeURI("http://video.so.com/v?q=" + search_text);
-                }
+            }
+
+            else if (idn == 'vrcfo') {
+                    document.getElementById(idn).href = encodeURI("https://www.baidu.com/s?wd=" + search_text + " site:www.vrcfo.com");
+            }
+
+            else if (idn == 'canet') {
+                 document.getElementById(idn).href = encodeURI("https://www.baidu.com/s?wd=" + search_text + " site:www.canet.com.cn");
+            }
+
+            else if (idn == 'acclib') {
+                 document.getElementById(idn).href = encodeURI("http://www.acclib.com/?s=" + search_text);
+            }
+
+            else if (idn == 'cwkjw') {
+                 document.getElementById(idn).href = encodeURI("http://www.chinaso.com/search/pagesearch.htm?q=" + search_text + "+ site:www.cwkjw.com");
+            }
 
 
-                else {
+
+            else {
                     1 == 1;
-                }
+            }
 
             // clean last anchor color
             document.getElementById(idn_last).style.color = "white";
@@ -727,11 +744,11 @@
         }
 
         // focus cursor in search_input
-        //        window.addEventListener('blur', function () {
-        //            setTimeout(function () {
-        //                focus_in_input()
-        //            }, 100);
-        //        });
+//                window.addEventListener('blur', function () {
+//                    setTimeout(function () {
+//                        focus_in_input()
+//                    }, 100);
+//                });
 
 
         var programmer_engine_list =
@@ -951,7 +968,7 @@
                 <li><a href="https://www.amazon.cn/s/field-keywords=" target="_blank" id="amazon"\
                        onclick="get_search_input(\'amazon\')">亚逊</a></li>';
 
-        var creator_engine_list =
+        var investor_engine_list =
                 '<li><a href="http://www.bing.com" target="engine_result_iframe" id="bing"\
                         onclick="return get_search_input(\'bing\')">必应</a></li>\
                 <li><a href="http://www.pedaily.cn" target="engine_result_iframe" id="pedaily"\
@@ -1073,7 +1090,15 @@
                        onclick="return get_search_input(\'weixin\')">微信</a></li>\
                 <li><a href="http://www.toutiao.com" target="engine_result_iframe" id="toutiao"\
                        onclick="return get_search_input(\'toutiao\')">头条</a></li>\
-                        ';
+                <li><a href="http://www.vrcfo.com" target="engine_result_iframe" id="vrcfo"\
+                       onclick="return get_search_input(\'vrcfo\')">财税网</a></li>\
+                <li><a href="http://www.canet.com.cn" target="engine_result_iframe" id="canet"\
+                       onclick="return get_search_input(\'canet\')">会计网</a></li>\
+                <li><a href="http://www.acclib.com" target="engine_result_iframe" id="acclib"\
+                       onclick="return get_search_input(\'acclib\')">资料网</a></li>\
+                <li><a href="http://www.cwkjw.com" target="engine_result_iframe" id="cwkjw"\
+                       onclick="return get_search_input(\'cwkjw\')">财会网</a></li>\
+                       ';
 
 
         var normal_people_engine_list =
@@ -1160,8 +1185,8 @@
             else if (role == "网购族") {
                 document.getElementById("engine_list").innerHTML = elecbuyer_engine_list;
             }
-            else if (role == "创构者") {
-                document.getElementById("engine_list").innerHTML = creator_engine_list;
+            else if (role == "投资人") {
+                document.getElementById("engine_list").innerHTML = investor_engine_list;
             }
             else if (role == "律师") {
                 document.getElementById("engine_list").innerHTML = lawyer_engine_list;
@@ -1199,13 +1224,13 @@
         <option value="网购族">网购族</option>
         <option value="程序员">程序员</option>
         <option value="设计师">设计师</option>
-        <option value="创构者">创构者</option>
+        <option value="投资人">投资人</option>
         <option value="律师">律师</option>
         <option value="财务">财务</option>
 
     </select>
     <input id="search_input" type="text" placeholder="一次输入，到处搜索" onkeydown="return click_search_button()"/>
-    <input id="search_button" type="button" value="☌" onclick="click_engine_anchor()"/> <!--放大镜 unicode 编码 u128269/☌ -->
+    <input id="search_button" type="button" value="123好了" onclick="click_engine_anchor()"/> <!--放大镜 unicode 编码 u128269/☌ -->
 </form>
 
 
