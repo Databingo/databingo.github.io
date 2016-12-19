@@ -733,7 +733,37 @@
                  document.getElementById(idn).href = encodeURI("https://duckduckgo.com/?q=" + search_text + "&t=h_&iax=1&ia=images");
             }
 
+            else if (idn == 'symbolhound') {
+                 document.getElementById(idn).href = encodeURI("http://symbolhound.com/?q=" + search_text);
+            }
 
+            else if (idn == 'krugle') {
+                 document.getElementById(idn).href = encodeURI("http://opensearch.krugle.org/document/search/#query=" + search_text);
+            }
+
+            else if (idn == 'findjar') {
+                 document.getElementById(idn).href = encodeURI("http://www.findjar.com/index.x?query=" + search_text);
+            }
+
+            else if (idn == 'yunfan') {
+                 document.getElementById(idn).href = encodeURI("http://www.yunfan.com/s.php?q=" + search_text);
+            }
+
+            else if (idn == 'yizhansou') {
+                 document.getElementById(idn).href = encodeURI("http://v.yizhansou.com/search?kw=" + search_text);
+            }
+
+            else if (idn == 'imdb') {
+                 document.getElementById(idn).href = encodeURI("http://www.imdb.com/find?q=" + search_text);
+            }
+
+            else if (idn == 'kejilie') {
+                 document.getElementById(idn).href = encodeURI("http://www.kejilie.com/s.do?text=" + search_text);
+            }
+
+            else if (idn == 'zealer') {
+                 document.getElementById(idn).href = encodeURI("http://www.zealer.com/search/index?keyword=" + search_text);
+            }
 
 
 
@@ -791,6 +821,12 @@
                        onclick="return get_search_input(\'zhongsou\')">中搜</a></li>\
                 <li><a href="https://www.so.com" target="engine_result_iframe" id="360"\
                        onclick="return get_search_input(\'360\')">360s</a></li>\
+                <li><a href="http://symbolhound.com" target="engine_result_iframe" id="symbolhound"\
+                       onclick="return get_search_input(\'symbolhound\')">Symbolhound</a></li>\
+                <li><a href="http://www.krugle.com" target="engine_result_iframe" id="krugle"\
+                       onclick="return get_search_input(\'krugle\')">Krugle</a></li>\
+                <li><a href="http://www.findjar.com" target="engine_result_iframe" id="findjar"\
+                       onclick="return get_search_input(\'findjar\')">Findjar</a></li>\
                 <!--翻译搜索-->\
                 <li><a href="http://www.youdao.com" target="engine_result_iframe" id="youdao"\
                        onclick="return get_search_input(\'youdao\')">有道</a></li>\
@@ -881,12 +917,16 @@
                        onclick="return get_search_input(\'sina_video\')">新浪</a></li>\
                 <li><a href="http://www.kankan.com" target="engine_result_iframe" id="kankan"\
                        onclick="return get_search_input(\'kankan\')">看看</a></li>\
+                <li><a href="http://www.yunfan.com" target="engine_result_iframe" id="yunfan"\
+                       onclick="return get_search_input(\'yunfan\')">云帆</a></li>\
                 <li><a href="http://www.mgtv.com" target="engine_result_iframe" id="mgtv"\
                        onclick="return get_search_input(\'mgtv\')">芒果</a></li>\
                 <li><a href="http://www.ku6.com" target="engine_result_iframe" id="ku6"\
                        onclick="return get_search_input(\'ku6\')">酷六</a></li>\
                 <li><a href="http://www.1905.com" target="engine_result_iframe" id="1905"\
                        onclick="return get_search_input(\'1905\')">1905</a></li>\
+                <li><a href="http://www.yizhansou.com" target="engine_result_iframe" id="yizhansou"\
+                       onclick="return get_search_input(\'yizhansou\')">一站</a></li>\
                 <li><a href="http://www.mtime.com" target="engine_result_iframe" id="mtime"\
                        onclick="return get_search_input(\'mtime\')">时光</a></li>\
                        ------\
@@ -894,6 +934,8 @@
                        onclick="return get_search_input(\'video_duck\')">Duck</a></li>\
                 <li><a href="https://movie.douban.com" target="_blank" id="douban_movie"\
                        onclick="return get_search_input(\'douban_movie\')">豆瓣</a></li>\
+                <li><a href="https://www.imdb.com" target="_blank" id="imdb"\
+                       onclick="return get_search_input(\'imdb\')">IMDB</a></li>\
                 <li><a href="http://www.ted.com" target="_blank" id="ted"\
                        onclick="return get_search_input(\'ted\')">TED</a></li>\
                 <li><a href="https://vimeo.com" target="_blank" id="vimeo"\
@@ -911,6 +953,8 @@
                        onclick="return get_search_input(\'sogou\')">搜狗</a></li>\
                 <li><a href="https://www.so.com" target="engine_result_iframe" id="360"\
                        onclick="return get_search_input(\'360\')">360s</a></li>\
+                <li><a href="https://duckduckgo.com" target="engine_result_iframe" id="duck"\
+                       onclick="return get_search_input(\'duck\')">Duck</a></li>\
                 <!--内容平台搜索-->\
                 <li><a href="http://zhihu.sogou.com" target="engine_result_iframe" id="zhihu"\
                        onclick="return get_search_input(\'zhihu\')">知乎</a></li>\
@@ -925,10 +969,6 @@
                 <!--视频搜索平台-->\
                 <li><a href="http://www.youku.com" target="engine_result_iframe" id="youku"\
                        onclick="return get_search_input(\'youku\')">优酷</a></li>\
-                <li><a href="http://www.le.com" target="engine_result_iframe" id="leshi"\
-                       onclick="return get_search_input(\'leshi\')">乐视</a></li>\
-                <li><a href="http://www.pptv.com" target="engine_result_iframe" id="pptv"\
-                       onclick="return get_search_input(\'pptv\')">pptv</a></li>\
                 <li><a href="http://www.v.qq.com" target="engine_result_iframe" id="qqtv"\
                        onclick="return get_search_input(\'qqtv\')">qqtv</a></li>\
                 <li><a href="http://www.bilibili.com" target="engine_result_iframe" id="bilibili"\
@@ -939,6 +979,8 @@
                 <li><a href="https://search.jd.com" target="engine_result_iframe" id="jingdong"\
                        onclick="return get_search_input(\'jingdong\')">京东</a></li>\
                 <!--科技媒体搜索-->\
+                <li><a href="http://www.kejilie.com" target="engine_result_iframe" id="kejilie"\
+                       onclick="return get_search_input(\'kejilie\')">科技猎</a></li>\
                 <li><a href="http://search.zol.com.cn/s/" target="engine_result_iframe" id="zol"\
                        onclick="return get_search_input(\'zol\')">ZOL</a></li>\
                 <li><a href="http://36kr.com/search/articles/" target="engine_result_iframe" id="36kr"\
@@ -954,8 +996,8 @@
                        onclick="return get_search_input(\'douban\')">豆瓣</a></li>\
                 <li><a href="http://www.jianshu.com" target="_blank" id="jianshu"\
                        onclick="return get_search_input(\'jianshu\')">简书</a></li>\
-                <li><a href="https://www.amazon.cn/s/field-keywords=" target="_blank" id="amazon"\
-                       onclick="return get_search_input(\'amazon\')">亚逊</a></li>\
+                <li><a href="http://www.zealer.com" target="_blank" id="zealer"\
+                       onclick="return get_search_input(\'zealer\')">Zealer</a></li>\
                        ';
 
 
