@@ -765,7 +765,17 @@
                  document.getElementById(idn).href = encodeURI("http://www.zealer.com/search/index?keyword=" + search_text);
             }
 
+            else if (idn == 'yidianzixun') {
+                 document.getElementById(idn).href = encodeURI("http://www.yidianzixun.com/home?page=channel&keyword=" + search_text);
+            }
 
+            else if (idn == 'smzzd') {
+                 document.getElementById(idn).href = encodeURI("http://zzd.sm.cn/webapp/searchList?query=" + search_text);
+            }
+
+            else if (idn == 'sm') {
+                 document.getElementById(idn).href = encodeURI("http://m.sm.cn/s?q=" + search_text);
+            }
 
 
 
@@ -820,7 +830,7 @@
                 <li><a href="https://www.chinaso.com" target="engine_result_iframe" id="zhongsou"\
                        onclick="return get_search_input(\'zhongsou\')">中搜</a></li>\
                 <li><a href="https://www.so.com" target="engine_result_iframe" id="360"\
-                       onclick="return get_search_input(\'360\')">360s</a></li>\
+                       onclick="return get_search_input(\'360\')">360</a></li>\
                 <li><a href="http://symbolhound.com" target="engine_result_iframe" id="symbolhound"\
                        onclick="return get_search_input(\'symbolhound\')">Symbolhound</a></li>\
                 <li><a href="http://www.krugle.com" target="engine_result_iframe" id="krugle"\
@@ -952,7 +962,7 @@
                 <li><a href="https://www.sogou.com" target="engine_result_iframe" id="sogou"\
                        onclick="return get_search_input(\'sogou\')">搜狗</a></li>\
                 <li><a href="https://www.so.com" target="engine_result_iframe" id="360"\
-                       onclick="return get_search_input(\'360\')">360s</a></li>\
+                       onclick="return get_search_input(\'360\')">360</a></li>\
                 <li><a href="https://duckduckgo.com" target="engine_result_iframe" id="duck"\
                        onclick="return get_search_input(\'duck\')">Duck</a></li>\
                 <!--内容平台搜索-->\
@@ -1191,9 +1201,11 @@
                 <li><a href="https://www.chinaso.com" target="engine_result_iframe" id="zhongsou"\
                        onclick="return get_search_input(\'zhongsou\')">中搜</a></li>\
                 <li><a href="https://www.so.com" target="engine_result_iframe" id="360"\
-                       onclick="return get_search_input(\'360\')">360s</a></li>\
+                       onclick="return get_search_input(\'360\')">360</a></li>\
                 <li><a href="https://duckduckgo.com" target="engine_result_iframe" id="duck"\
                        onclick="return get_search_input(\'duck\')">Duck</a></li>\
+                <li><a href="http://m.sm.cn/s?q=test" target="engine_result_iframe" id="sm"\
+                       onclick="return get_search_input(\'sm\')">神马</a></li>\
                 <!--内容平台搜索-->\
                 <li><a href="http://zhihu.sogou.com" target="engine_result_iframe" id="zhihu"\
                        onclick="return get_search_input(\'zhihu\')">知乎</a></li>\
@@ -1201,10 +1213,14 @@
                        onclick="return get_search_input(\'weixin\')">微信</a></li>\
                 <li><a href="http://t.zhongsou.com/wb?" target="engine_result_iframe" id="zweibo"\
                        onclick="return get_search_input(\'zweibo\')">微博</a></li>\
-                <li><a href="http://www.toutiao.com" target="engine_result_iframe" id="toutiao"\
-                       onclick="return get_search_input(\'toutiao\')">头条</a></li>\
                 <li><a href="http://baijia.baidu.com/?tn=search&word=" target="engine_result_iframe" id="baijia"\
                        onclick="return get_search_input(\'baijia\')">百家</a></li>\
+                <li><a href="http://www.toutiao.com" target="engine_result_iframe" id="toutiao"\
+                       onclick="return get_search_input(\'toutiao\')">头条</a></li>\
+                <li><a href="http://www.yidianzixun.com" target="engine_result_iframe" id="yidianzixun"\
+                       onclick="return get_search_input(\'yidianzixun\')">一点</a></li>\
+                <li><a href="http://zzd.sm.cn" target="engine_result_iframe" id="smzzd"\
+                       onclick="return get_search_input(\'smzzd\')">早知</a></li>\
                  <!--翻译搜索-->\
                 <li><a href="http://www.youdao.com" target="engine_result_iframe" id="youdao"\
                        onclick="return get_search_input(\'youdao\')">有道</a></li>\
@@ -1229,15 +1245,6 @@
                        onclick="return get_search_input(\'jingdong\')">京东</a></li>\
                 <li><a href="http://meituan.com/s/?w=" target="engine_result_iframe" id="meituan"\
                        onclick="return get_search_input(\'meituan\')">美团</a></li>\
-                <!--科技媒体搜索-->\
-                <li><a href="http://search.zol.com.cn/s/" target="engine_result_iframe" id="zol"\
-                       onclick="return get_search_input(\'zol\')">ZOL</a></li>\
-                <li><a href="http://36kr.com/search/articles/" target="engine_result_iframe" id="36kr"\
-                       onclick="return get_search_input(\'36kr\')">36kr</a></li>\
-                <li><a href="https://www.huxiu.com/search.html?s=" target="engine_result_iframe" id="huxiu"\
-                       onclick="return get_search_input(\'huxiu\')">虎嗅</a></li>\
-                <li><a href="http://www.leiphone.com/search?s=" target="engine_result_iframe" id="leiphone"\
-                       onclick="return get_search_input(\'leiphone\')">雷锋</a></li>\
                 ------\
                 <li><a href="https://www.yahoo.com" target="_blank" id="yahoo"\
                        onclick="return get_search_input(\'yahoo\')">雅虎</a></li>\
@@ -1245,8 +1252,6 @@
                        onclick="return get_search_input(\'douban\')">豆瓣</a></li>\
                 <li><a href="http://www.jianshu.com" target="_blank" id="jianshu"\
                        onclick="return get_search_input(\'jianshu\')">简书</a></li>\
-                <li><a href="https://www.amazon.cn/s/field-keywords=" target="_blank" id="amazon"\
-                       onclick="return get_search_input(\'amazon\')">亚逊</a></li>\
                 <li><a target="advertisement.html" id="ad"\
                        onclick="return get_search_input(\'ad\')">广告</a></li>';
 
